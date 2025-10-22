@@ -1,4 +1,5 @@
-﻿using Supermercado.Data;
+﻿using ImageMagick.Drawing;
+using Supermercado.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,11 @@ namespace Supermercado
 {
     public partial class Form1 : Form
     {
+        Datos datos = new Datos();
         public Form1()
         {
             InitializeComponent();
+            mostrarEmpleados();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -159,6 +162,81 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAgregarProd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT id as \"Id\", nombre as \"Nombre\", " +
+            "apaterno as \"A. Paterno\", amaterno as \"A. Materno\", " +
+            "direccion as \"Direccion\", telefono as \"Telefono\" " +
+            "FROM \"Agenda\" " + "WHERE nombre ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR apaterno ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR amaterno ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR (nombre || ' ' || apaterno || ' ' || amaterno) ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR direccion ILIKE '%" + tBBuscar.Text + "%' " +
+            "   OR telefono ILIKE '%" + tBBuscar.Text + "%'"
+            );
+            if (ds != null)
+            {
+                //dGVPersona.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void mostrarEmpleados()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM empleados Order By id");
+            if (ds != null)
+            {
+                dGVEmpleados.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVEmpleados_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnEditarEmp.Enabled = true;
+            btnEditarEmp.Enabled = true;
+            String id = dGVEmpleados[0, dGVEmpleados.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM empleados WHERE id=" + id);
+            tBNombreEmp.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+            tBApellEmp.Text = ds.Tables[0].Rows[0]["apellido"].ToString();
+            tBEdadEmp.Text = ds.Tables[0].Rows[0]["edad"].ToString();
+            tBTipoDocEmp.Text = ds.Tables[0].Rows[0]["tipo_doc"].ToString();
+            tBNumDocEmp.Text = ds.Tables[0].Rows[0]["nro_doc"].ToString();
+            tBCuilEmp.Text = ds.Tables[0].Rows[0]["cuil"].ToString();
+            tBDireEmp.Text = ds.Tables[0].Rows[0]["direccion"].ToString();
+            tBTel1Emp.Text = ds.Tables[0].Rows[0]["nro_tel_princ"].ToString();
+            tBTel2Emp.Text = ds.Tables[0].Rows[0]["nro_tel_sec"].ToString();
+            tBEmailEmp.Text = ds.Tables[0].Rows[0]["email"].ToString();
+            tBCargoEmp.Text = ds.Tables[0].Rows[0]["cargo"].ToString();
+            tBAntiguEmp.Text = ds.Tables[0].Rows[0]["antiguedad"].ToString();
+            tBSalaAnuEmp.Text = ds.Tables[0].Rows[0]["salario_anual"].ToString();
+            MessageBox.Show("ID seleccionado = "+id);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarEmp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

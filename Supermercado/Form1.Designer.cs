@@ -51,6 +51,9 @@
             this.label29 = new System.Windows.Forms.Label();
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tBBuscarEmp = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.dGVEmpleados = new System.Windows.Forms.DataGridView();
             this.dTPFechaIngEmp = new System.Windows.Forms.DateTimePicker();
             this.dTPFechaNacEmp = new System.Windows.Forms.DateTimePicker();
             this.tBSalaAnuEmp = new System.Windows.Forms.TextBox();
@@ -126,6 +129,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.btnAltaProv = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.cBMedioPagDF = new System.Windows.Forms.ComboBox();
+            this.btnAltaDF = new System.Windows.Forms.Button();
             this.tBDescPagoDF = new System.Windows.Forms.TextBox();
             this.tBIVADF = new System.Windows.Forms.TextBox();
             this.tBCostAsocDF = new System.Windows.Forms.TextBox();
@@ -139,15 +144,36 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.btnAltaDF = new System.Windows.Forms.Button();
-            this.cBMedioPagDF = new System.Windows.Forms.ComboBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label53 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label52 = new System.Windows.Forms.Label();
+            this.btnAgregarProd = new System.Windows.Forms.Button();
+            this.cBVendedor = new System.Windows.Forms.ComboBox();
+            this.cBFact = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tBBuscar = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminarEmp = new System.Windows.Forms.Button();
+            this.btnEditarEmp = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabCtrlSupermercado.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -176,7 +202,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(793, 414);
+            this.tabPage3.Size = new System.Drawing.Size(1198, 592);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Producto";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -363,6 +389,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnEditarEmp);
+            this.tabPage2.Controls.Add(this.btnEliminarEmp);
+            this.tabPage2.Controls.Add(this.tBBuscarEmp);
+            this.tabPage2.Controls.Add(this.label54);
+            this.tabPage2.Controls.Add(this.dGVEmpleados);
             this.tabPage2.Controls.Add(this.dTPFechaIngEmp);
             this.tabPage2.Controls.Add(this.dTPFechaNacEmp);
             this.tabPage2.Controls.Add(this.tBSalaAnuEmp);
@@ -397,14 +428,42 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 414);
+            this.tabPage2.Size = new System.Drawing.Size(1198, 592);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tBBuscarEmp
+            // 
+            this.tBBuscarEmp.Location = new System.Drawing.Point(91, 285);
+            this.tBBuscarEmp.Name = "tBBuscarEmp";
+            this.tBBuscarEmp.Size = new System.Drawing.Size(341, 26);
+            this.tBBuscarEmp.TabIndex = 52;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(20, 288);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(65, 20);
+            this.label54.TabIndex = 51;
+            this.label54.Text = "Buscar";
+            // 
+            // dGVEmpleados
+            // 
+            this.dGVEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVEmpleados.Location = new System.Drawing.Point(23, 334);
+            this.dGVEmpleados.Name = "dGVEmpleados";
+            this.dGVEmpleados.RowHeadersWidth = 62;
+            this.dGVEmpleados.RowTemplate.Height = 28;
+            this.dGVEmpleados.Size = new System.Drawing.Size(1146, 221);
+            this.dGVEmpleados.TabIndex = 50;
+            this.dGVEmpleados.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVEmpleados_MouseClick);
+            // 
             // dTPFechaIngEmp
             // 
-            this.dTPFechaIngEmp.Location = new System.Drawing.Point(551, 194);
+            this.dTPFechaIngEmp.Location = new System.Drawing.Point(969, 149);
             this.dTPFechaIngEmp.Name = "dTPFechaIngEmp";
             this.dTPFechaIngEmp.Size = new System.Drawing.Size(200, 26);
             this.dTPFechaIngEmp.TabIndex = 49;
@@ -418,35 +477,35 @@
             // 
             // tBSalaAnuEmp
             // 
-            this.tBSalaAnuEmp.Location = new System.Drawing.Point(551, 234);
+            this.tBSalaAnuEmp.Location = new System.Drawing.Point(969, 189);
             this.tBSalaAnuEmp.Name = "tBSalaAnuEmp";
             this.tBSalaAnuEmp.Size = new System.Drawing.Size(200, 26);
             this.tBSalaAnuEmp.TabIndex = 47;
             // 
             // tBAntiguEmp
             // 
-            this.tBAntiguEmp.Location = new System.Drawing.Point(551, 149);
+            this.tBAntiguEmp.Location = new System.Drawing.Point(969, 104);
             this.tBAntiguEmp.Name = "tBAntiguEmp";
             this.tBAntiguEmp.Size = new System.Drawing.Size(200, 26);
             this.tBAntiguEmp.TabIndex = 43;
             // 
             // tBCargoEmp
             // 
-            this.tBCargoEmp.Location = new System.Drawing.Point(551, 107);
+            this.tBCargoEmp.Location = new System.Drawing.Point(969, 62);
             this.tBCargoEmp.Name = "tBCargoEmp";
             this.tBCargoEmp.Size = new System.Drawing.Size(200, 26);
             this.tBCargoEmp.TabIndex = 41;
             // 
             // tBDireEmp
             // 
-            this.tBDireEmp.Location = new System.Drawing.Point(141, 322);
+            this.tBDireEmp.Location = new System.Drawing.Point(500, 99);
             this.tBDireEmp.Name = "tBDireEmp";
             this.tBDireEmp.Size = new System.Drawing.Size(201, 26);
             this.tBDireEmp.TabIndex = 39;
             // 
             // tBCuilEmp
             // 
-            this.tBCuilEmp.Location = new System.Drawing.Point(141, 275);
+            this.tBCuilEmp.Location = new System.Drawing.Point(500, 52);
             this.tBCuilEmp.Name = "tBCuilEmp";
             this.tBCuilEmp.Size = new System.Drawing.Size(201, 26);
             this.tBCuilEmp.TabIndex = 37;
@@ -460,35 +519,35 @@
             // 
             // tBEmailEmp
             // 
-            this.tBEmailEmp.Location = new System.Drawing.Point(551, 59);
+            this.tBEmailEmp.Location = new System.Drawing.Point(969, 14);
             this.tBEmailEmp.Name = "tBEmailEmp";
             this.tBEmailEmp.Size = new System.Drawing.Size(200, 26);
             this.tBEmailEmp.TabIndex = 31;
             // 
             // tBTel2Emp
             // 
-            this.tBTel2Emp.Location = new System.Drawing.Point(551, 14);
+            this.tBTel2Emp.Location = new System.Drawing.Point(501, 191);
             this.tBTel2Emp.Name = "tBTel2Emp";
             this.tBTel2Emp.Size = new System.Drawing.Size(200, 26);
             this.tBTel2Emp.TabIndex = 29;
             // 
             // tBTel1Emp
             // 
-            this.tBTel1Emp.Location = new System.Drawing.Point(141, 366);
+            this.tBTel1Emp.Location = new System.Drawing.Point(500, 143);
             this.tBTel1Emp.Name = "tBTel1Emp";
             this.tBTel1Emp.Size = new System.Drawing.Size(201, 26);
             this.tBTel1Emp.TabIndex = 27;
             // 
             // tBNumDocEmp
             // 
-            this.tBNumDocEmp.Location = new System.Drawing.Point(141, 231);
+            this.tBNumDocEmp.Location = new System.Drawing.Point(500, 8);
             this.tBNumDocEmp.Name = "tBNumDocEmp";
             this.tBNumDocEmp.Size = new System.Drawing.Size(201, 26);
             this.tBNumDocEmp.TabIndex = 25;
             // 
             // tBTipoDocEmp
             // 
-            this.tBTipoDocEmp.Location = new System.Drawing.Point(141, 185);
+            this.tBTipoDocEmp.Location = new System.Drawing.Point(140, 188);
             this.tBTipoDocEmp.Name = "tBTipoDocEmp";
             this.tBTipoDocEmp.Size = new System.Drawing.Size(201, 26);
             this.tBTipoDocEmp.TabIndex = 23;
@@ -511,7 +570,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(384, 240);
+            this.label22.Location = new System.Drawing.Point(802, 195);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(119, 20);
             this.label22.TabIndex = 46;
@@ -521,7 +580,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(384, 194);
+            this.label21.Location = new System.Drawing.Point(802, 149);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(128, 20);
             this.label21.TabIndex = 44;
@@ -531,7 +590,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(384, 152);
+            this.label20.Location = new System.Drawing.Point(802, 107);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(106, 20);
             this.label20.TabIndex = 42;
@@ -541,7 +600,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(384, 116);
+            this.label19.Location = new System.Drawing.Point(802, 71);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 20);
             this.label19.TabIndex = 40;
@@ -551,7 +610,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(21, 325);
+            this.label18.Location = new System.Drawing.Point(380, 102);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 20);
             this.label18.TabIndex = 38;
@@ -561,7 +620,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(21, 278);
+            this.label17.Location = new System.Drawing.Point(380, 55);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 20);
             this.label17.TabIndex = 36;
@@ -591,7 +650,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(384, 65);
+            this.label1.Location = new System.Drawing.Point(802, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 30;
@@ -601,7 +660,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(384, 17);
+            this.label9.Location = new System.Drawing.Point(379, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 20);
             this.label9.TabIndex = 28;
@@ -611,7 +670,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 369);
+            this.label10.Location = new System.Drawing.Point(379, 146);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 20);
             this.label10.TabIndex = 26;
@@ -621,7 +680,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 234);
+            this.label11.Location = new System.Drawing.Point(380, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 20);
             this.label11.TabIndex = 24;
@@ -631,7 +690,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(20, 188);
+            this.label12.Location = new System.Drawing.Point(19, 191);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 20);
             this.label12.TabIndex = 22;
@@ -659,7 +718,7 @@
             // 
             // btnAltaEmp
             // 
-            this.btnAltaEmp.Location = new System.Drawing.Point(384, 317);
+            this.btnAltaEmp.Location = new System.Drawing.Point(902, 239);
             this.btnAltaEmp.Name = "btnAltaEmp";
             this.btnAltaEmp.Size = new System.Drawing.Size(267, 36);
             this.btnAltaEmp.TabIndex = 17;
@@ -687,7 +746,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(793, 414);
+            this.tabPage1.Size = new System.Drawing.Size(1198, 592);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -829,10 +888,11 @@
             this.tabCtrlSupermercado.Controls.Add(this.tabPage4);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage5);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage6);
+            this.tabCtrlSupermercado.Controls.Add(this.tabPage7);
             this.tabCtrlSupermercado.Location = new System.Drawing.Point(1, 2);
             this.tabCtrlSupermercado.Name = "tabCtrlSupermercado";
             this.tabCtrlSupermercado.SelectedIndex = 0;
-            this.tabCtrlSupermercado.Size = new System.Drawing.Size(801, 447);
+            this.tabCtrlSupermercado.Size = new System.Drawing.Size(1206, 625);
             this.tabCtrlSupermercado.TabIndex = 0;
             // 
             // tabPage4
@@ -851,7 +911,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(793, 414);
+            this.tabPage4.Size = new System.Drawing.Size(1198, 592);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Facturas";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -969,7 +1029,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(793, 414);
+            this.tabPage5.Size = new System.Drawing.Size(1198, 592);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Proveedores";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1106,10 +1166,32 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(793, 414);
+            this.tabPage6.Size = new System.Drawing.Size(1198, 592);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Detalles Facturas";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // cBMedioPagDF
+            // 
+            this.cBMedioPagDF.FormattingEnabled = true;
+            this.cBMedioPagDF.Items.AddRange(new object[] {
+            "EFECTIVO",
+            "TARJETA DE DEBITO",
+            "TARJETA DE CREDITO"});
+            this.cBMedioPagDF.Location = new System.Drawing.Point(219, 259);
+            this.cBMedioPagDF.Name = "cBMedioPagDF";
+            this.cBMedioPagDF.Size = new System.Drawing.Size(202, 28);
+            this.cBMedioPagDF.TabIndex = 47;
+            // 
+            // btnAltaDF
+            // 
+            this.btnAltaDF.Location = new System.Drawing.Point(123, 360);
+            this.btnAltaDF.Name = "btnAltaDF";
+            this.btnAltaDF.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaDF.TabIndex = 46;
+            this.btnAltaDF.Text = "ALTA";
+            this.btnAltaDF.UseVisualStyleBackColor = true;
+            this.btnAltaDF.Click += new System.EventHandler(this.btnAltaDF_Click);
             // 
             // tBDescPagoDF
             // 
@@ -1223,33 +1305,190 @@
             this.label50.TabIndex = 32;
             this.label50.Text = "ID factura:";
             // 
-            // btnAltaDF
+            // tabPage7
             // 
-            this.btnAltaDF.Location = new System.Drawing.Point(123, 360);
-            this.btnAltaDF.Name = "btnAltaDF";
-            this.btnAltaDF.Size = new System.Drawing.Size(131, 36);
-            this.btnAltaDF.TabIndex = 46;
-            this.btnAltaDF.Text = "ALTA";
-            this.btnAltaDF.UseVisualStyleBackColor = true;
-            this.btnAltaDF.Click += new System.EventHandler(this.btnAltaDF_Click);
+            this.tabPage7.Controls.Add(this.label53);
+            this.tabPage7.Controls.Add(this.dataGridView2);
+            this.tabPage7.Controls.Add(this.label52);
+            this.tabPage7.Controls.Add(this.btnAgregarProd);
+            this.tabPage7.Controls.Add(this.cBVendedor);
+            this.tabPage7.Controls.Add(this.cBFact);
+            this.tabPage7.Controls.Add(this.panel1);
+            this.tabPage7.Controls.Add(this.tBBuscar);
+            this.tabPage7.Controls.Add(this.label51);
+            this.tabPage7.Controls.Add(this.dataGridView1);
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1198, 592);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Venta";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // cBMedioPagDF
+            // label53
             // 
-            this.cBMedioPagDF.FormattingEnabled = true;
-            this.cBMedioPagDF.Items.AddRange(new object[] {
-            "EFECTIVO",
-            "TARJETA DE DEBITO",
-            "TARJETA DE CREDITO"});
-            this.cBMedioPagDF.Location = new System.Drawing.Point(219, 259);
-            this.cBMedioPagDF.Name = "cBMedioPagDF";
-            this.cBMedioPagDF.Size = new System.Drawing.Size(202, 28);
-            this.cBMedioPagDF.TabIndex = 47;
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(7, 222);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(55, 20);
+            this.label53.TabIndex = 9;
+            this.label53.Text = "Cesta:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 257);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(636, 150);
+            this.dataGridView2.TabIndex = 8;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(842, 24);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(100, 20);
+            this.label52.TabIndex = 7;
+            this.label52.Text = "ID vendedor:";
+            // 
+            // btnAgregarProd
+            // 
+            this.btnAgregarProd.Location = new System.Drawing.Point(6, 154);
+            this.btnAgregarProd.Name = "btnAgregarProd";
+            this.btnAgregarProd.Size = new System.Drawing.Size(306, 44);
+            this.btnAgregarProd.TabIndex = 6;
+            this.btnAgregarProd.Text = "Agregar producto";
+            this.btnAgregarProd.UseVisualStyleBackColor = true;
+            this.btnAgregarProd.Click += new System.EventHandler(this.btnAgregarProd_Click);
+            // 
+            // cBVendedor
+            // 
+            this.cBVendedor.FormattingEnabled = true;
+            this.cBVendedor.Location = new System.Drawing.Point(948, 21);
+            this.cBVendedor.Name = "cBVendedor";
+            this.cBVendedor.Size = new System.Drawing.Size(92, 28);
+            this.cBVendedor.TabIndex = 5;
+            // 
+            // cBFact
+            // 
+            this.cBFact.AutoSize = true;
+            this.cBFact.Location = new System.Drawing.Point(648, 154);
+            this.cBFact.Name = "cBFact";
+            this.cBFact.Size = new System.Drawing.Size(90, 24);
+            this.cBFact.TabIndex = 4;
+            this.cBFact.Text = "Factura";
+            this.cBFact.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(648, 191);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(375, 216);
+            this.panel1.TabIndex = 3;
+            // 
+            // tBBuscar
+            // 
+            this.tBBuscar.Location = new System.Drawing.Point(102, 26);
+            this.tBBuscar.Name = "tBBuscar";
+            this.tBBuscar.Size = new System.Drawing.Size(194, 26);
+            this.tBBuscar.TabIndex = 2;
+            this.tBBuscar.TextChanged += new System.EventHandler(this.tBBuscar_TextChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(7, 29);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(59, 20);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "Buscar";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(7, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1016, 69);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Código";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Marca";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Peso";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Precio";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Cant. disp-";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 150;
+            // 
+            // btnEliminarEmp
+            // 
+            this.btnEliminarEmp.Location = new System.Drawing.Point(319, 239);
+            this.btnEliminarEmp.Name = "btnEliminarEmp";
+            this.btnEliminarEmp.Size = new System.Drawing.Size(267, 36);
+            this.btnEliminarEmp.TabIndex = 53;
+            this.btnEliminarEmp.Text = "ELIMINAR";
+            this.btnEliminarEmp.UseVisualStyleBackColor = true;
+            this.btnEliminarEmp.Click += new System.EventHandler(this.btnEliminarEmp_Click);
+            // 
+            // btnEditarEmp
+            // 
+            this.btnEditarEmp.Location = new System.Drawing.Point(608, 239);
+            this.btnEditarEmp.Name = "btnEditarEmp";
+            this.btnEditarEmp.Size = new System.Drawing.Size(267, 36);
+            this.btnEditarEmp.TabIndex = 54;
+            this.btnEditarEmp.Text = "EDITAR";
+            this.btnEditarEmp.UseVisualStyleBackColor = true;
+            this.btnEditarEmp.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1202, 627);
             this.Controls.Add(this.tabCtrlSupermercado);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1257,6 +1496,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabCtrlSupermercado.ResumeLayout(false);
@@ -1266,6 +1506,10 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1384,6 +1628,28 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.ComboBox cBMedioPagDF;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox cBFact;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tBBuscar;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Button btnAgregarProd;
+        private System.Windows.Forms.ComboBox cBVendedor;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.TextBox tBBuscarEmp;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.DataGridView dGVEmpleados;
+        private System.Windows.Forms.Button btnEditarEmp;
+        private System.Windows.Forms.Button btnEliminarEmp;
     }
 }
 
