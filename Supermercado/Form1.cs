@@ -137,5 +137,28 @@ namespace Supermercado
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnAltaDF_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            Datos data = new Datos();
+            string query = "INSERT INTO facturas_detalles(id_factura,tipo," +
+                "descr_factura,costo_asoc,iva,medio_de_pago,descr_pago)Values('"
+                + tBIdFactDF + "','" + tBTipoDF + "','" +
+                tBDescFactDF.Text + "','" + tBCostAsocDF.Text + "','"
+                + tBIVADF.Text + "','" + cBMedioPagDF.SelectedItem.ToString() + "','" 
+                + tBDescPagoDF + "')";
+            resultado = data.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

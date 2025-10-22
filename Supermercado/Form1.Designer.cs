@@ -51,6 +51,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dTPFechaIngEmp = new System.Windows.Forms.DateTimePicker();
+            this.dTPFechaNacEmp = new System.Windows.Forms.DateTimePicker();
             this.tBSalaAnuEmp = new System.Windows.Forms.TextBox();
             this.tBAntiguEmp = new System.Windows.Forms.TextBox();
             this.tBCargoEmp = new System.Windows.Forms.TextBox();
@@ -98,6 +100,7 @@
             this.btnAltaClie = new System.Windows.Forms.Button();
             this.tabCtrlSupermercado = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dTPFechaFact = new System.Windows.Forms.DateTimePicker();
             this.tBImpoTotFact = new System.Windows.Forms.TextBox();
             this.tBHraFact = new System.Windows.Forms.TextBox();
             this.tBCodFact = new System.Windows.Forms.TextBox();
@@ -109,6 +112,8 @@
             this.label39 = new System.Windows.Forms.Label();
             this.btnAltaFact = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tBEmailProv = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.tBTel2Prov = new System.Windows.Forms.TextBox();
             this.tBTel1Prov = new System.Windows.Forms.TextBox();
             this.tBDireProv = new System.Windows.Forms.TextBox();
@@ -120,17 +125,29 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.btnAltaProv = new System.Windows.Forms.Button();
-            this.tBEmailProv = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.dTPFechaNacEmp = new System.Windows.Forms.DateTimePicker();
-            this.dTPFechaIngEmp = new System.Windows.Forms.DateTimePicker();
-            this.dTPFechaFact = new System.Windows.Forms.DateTimePicker();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tBDescPagoDF = new System.Windows.Forms.TextBox();
+            this.tBIVADF = new System.Windows.Forms.TextBox();
+            this.tBCostAsocDF = new System.Windows.Forms.TextBox();
+            this.tBDescFactDF = new System.Windows.Forms.TextBox();
+            this.tBTipoDF = new System.Windows.Forms.TextBox();
+            this.tBIdFactDF = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.btnAltaDF = new System.Windows.Forms.Button();
+            this.cBMedioPagDF = new System.Windows.Forms.ComboBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabCtrlSupermercado.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -384,6 +401,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dTPFechaIngEmp
+            // 
+            this.dTPFechaIngEmp.Location = new System.Drawing.Point(551, 194);
+            this.dTPFechaIngEmp.Name = "dTPFechaIngEmp";
+            this.dTPFechaIngEmp.Size = new System.Drawing.Size(200, 26);
+            this.dTPFechaIngEmp.TabIndex = 49;
+            // 
+            // dTPFechaNacEmp
+            // 
+            this.dTPFechaNacEmp.Location = new System.Drawing.Point(141, 143);
+            this.dTPFechaNacEmp.Name = "dTPFechaNacEmp";
+            this.dTPFechaNacEmp.Size = new System.Drawing.Size(200, 26);
+            this.dTPFechaNacEmp.TabIndex = 48;
             // 
             // tBSalaAnuEmp
             // 
@@ -797,6 +828,7 @@
             this.tabCtrlSupermercado.Controls.Add(this.tabPage3);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage4);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage5);
+            this.tabCtrlSupermercado.Controls.Add(this.tabPage6);
             this.tabCtrlSupermercado.Location = new System.Drawing.Point(1, 2);
             this.tabCtrlSupermercado.Name = "tabCtrlSupermercado";
             this.tabCtrlSupermercado.SelectedIndex = 0;
@@ -823,6 +855,13 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Facturas";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dTPFechaFact
+            // 
+            this.dTPFechaFact.Location = new System.Drawing.Point(156, 109);
+            this.dTPFechaFact.Name = "dTPFechaFact";
+            this.dTPFechaFact.Size = new System.Drawing.Size(200, 26);
+            this.dTPFechaFact.TabIndex = 28;
             // 
             // tBImpoTotFact
             // 
@@ -935,6 +974,23 @@
             this.tabPage5.Text = "Proveedores";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // tBEmailProv
+            // 
+            this.tBEmailProv.Location = new System.Drawing.Point(165, 280);
+            this.tBEmailProv.Name = "tBEmailProv";
+            this.tBEmailProv.Size = new System.Drawing.Size(164, 26);
+            this.tBEmailProv.TabIndex = 40;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(36, 283);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(58, 20);
+            this.label43.TabIndex = 39;
+            this.label43.Text = "Email:";
+            // 
             // tBTel2Prov
             // 
             this.tBTel2Prov.Location = new System.Drawing.Point(165, 233);
@@ -1030,43 +1086,164 @@
             this.btnAltaProv.UseVisualStyleBackColor = true;
             this.btnAltaProv.Click += new System.EventHandler(this.btnAltaProv_Click);
             // 
-            // tBEmailProv
+            // tabPage6
             // 
-            this.tBEmailProv.Location = new System.Drawing.Point(165, 280);
-            this.tBEmailProv.Name = "tBEmailProv";
-            this.tBEmailProv.Size = new System.Drawing.Size(164, 26);
-            this.tBEmailProv.TabIndex = 40;
+            this.tabPage6.Controls.Add(this.cBMedioPagDF);
+            this.tabPage6.Controls.Add(this.btnAltaDF);
+            this.tabPage6.Controls.Add(this.tBDescPagoDF);
+            this.tabPage6.Controls.Add(this.tBIVADF);
+            this.tabPage6.Controls.Add(this.tBCostAsocDF);
+            this.tabPage6.Controls.Add(this.tBDescFactDF);
+            this.tabPage6.Controls.Add(this.tBTipoDF);
+            this.tabPage6.Controls.Add(this.tBIdFactDF);
+            this.tabPage6.Controls.Add(this.label44);
+            this.tabPage6.Controls.Add(this.label45);
+            this.tabPage6.Controls.Add(this.label46);
+            this.tabPage6.Controls.Add(this.label47);
+            this.tabPage6.Controls.Add(this.label48);
+            this.tabPage6.Controls.Add(this.label49);
+            this.tabPage6.Controls.Add(this.label50);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(793, 414);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Detalles Facturas";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // label43
+            // tBDescPagoDF
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(36, 283);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(58, 20);
-            this.label43.TabIndex = 39;
-            this.label43.Text = "Email:";
+            this.tBDescPagoDF.Location = new System.Drawing.Point(219, 309);
+            this.tBDescPagoDF.Name = "tBDescPagoDF";
+            this.tBDescPagoDF.Size = new System.Drawing.Size(202, 26);
+            this.tBDescPagoDF.TabIndex = 45;
             // 
-            // dTPFechaNacEmp
+            // tBIVADF
             // 
-            this.dTPFechaNacEmp.Location = new System.Drawing.Point(141, 143);
-            this.dTPFechaNacEmp.Name = "dTPFechaNacEmp";
-            this.dTPFechaNacEmp.Size = new System.Drawing.Size(200, 26);
-            this.dTPFechaNacEmp.TabIndex = 48;
+            this.tBIVADF.Location = new System.Drawing.Point(219, 215);
+            this.tBIVADF.Name = "tBIVADF";
+            this.tBIVADF.Size = new System.Drawing.Size(202, 26);
+            this.tBIVADF.TabIndex = 41;
             // 
-            // dTPFechaIngEmp
+            // tBCostAsocDF
             // 
-            this.dTPFechaIngEmp.Location = new System.Drawing.Point(551, 194);
-            this.dTPFechaIngEmp.Name = "dTPFechaIngEmp";
-            this.dTPFechaIngEmp.Size = new System.Drawing.Size(200, 26);
-            this.dTPFechaIngEmp.TabIndex = 49;
+            this.tBCostAsocDF.Location = new System.Drawing.Point(219, 169);
+            this.tBCostAsocDF.Name = "tBCostAsocDF";
+            this.tBCostAsocDF.Size = new System.Drawing.Size(202, 26);
+            this.tBCostAsocDF.TabIndex = 39;
             // 
-            // dTPFechaFact
+            // tBDescFactDF
             // 
-            this.dTPFechaFact.Location = new System.Drawing.Point(156, 109);
-            this.dTPFechaFact.Name = "dTPFechaFact";
-            this.dTPFechaFact.Size = new System.Drawing.Size(200, 26);
-            this.dTPFechaFact.TabIndex = 28;
+            this.tBDescFactDF.Location = new System.Drawing.Point(219, 124);
+            this.tBDescFactDF.Name = "tBDescFactDF";
+            this.tBDescFactDF.Size = new System.Drawing.Size(202, 26);
+            this.tBDescFactDF.TabIndex = 37;
+            // 
+            // tBTipoDF
+            // 
+            this.tBTipoDF.Location = new System.Drawing.Point(219, 76);
+            this.tBTipoDF.Name = "tBTipoDF";
+            this.tBTipoDF.Size = new System.Drawing.Size(202, 26);
+            this.tBTipoDF.TabIndex = 35;
+            // 
+            // tBIdFactDF
+            // 
+            this.tBIdFactDF.Location = new System.Drawing.Point(219, 28);
+            this.tBIdFactDF.Name = "tBIdFactDF";
+            this.tBIdFactDF.Size = new System.Drawing.Size(202, 26);
+            this.tBIdFactDF.TabIndex = 33;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(30, 312);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(178, 20);
+            this.label44.TabIndex = 44;
+            this.label44.Text = "Descripcion de pago:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(30, 265);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(127, 20);
+            this.label45.TabIndex = 42;
+            this.label45.Text = "Medio de pago";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(29, 215);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(44, 20);
+            this.label46.TabIndex = 40;
+            this.label46.Text = "IVA:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(30, 169);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(138, 20);
+            this.label47.TabIndex = 38;
+            this.label47.Text = "Costo asociado:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(30, 127);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(170, 20);
+            this.label48.TabIndex = 36;
+            this.label48.Text = "Descripción factura:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(30, 76);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(48, 20);
+            this.label49.TabIndex = 34;
+            this.label49.Text = "Tipo:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(30, 28);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(95, 20);
+            this.label50.TabIndex = 32;
+            this.label50.Text = "ID factura:";
+            // 
+            // btnAltaDF
+            // 
+            this.btnAltaDF.Location = new System.Drawing.Point(123, 360);
+            this.btnAltaDF.Name = "btnAltaDF";
+            this.btnAltaDF.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaDF.TabIndex = 46;
+            this.btnAltaDF.Text = "ALTA";
+            this.btnAltaDF.UseVisualStyleBackColor = true;
+            this.btnAltaDF.Click += new System.EventHandler(this.btnAltaDF_Click);
+            // 
+            // cBMedioPagDF
+            // 
+            this.cBMedioPagDF.FormattingEnabled = true;
+            this.cBMedioPagDF.Items.AddRange(new object[] {
+            "EFECTIVO",
+            "TARJETA DE DEBITO",
+            "TARJETA DE CREDITO"});
+            this.cBMedioPagDF.Location = new System.Drawing.Point(219, 259);
+            this.cBMedioPagDF.Name = "cBMedioPagDF";
+            this.cBMedioPagDF.Size = new System.Drawing.Size(202, 28);
+            this.cBMedioPagDF.TabIndex = 47;
             // 
             // Form1
             // 
@@ -1087,6 +1264,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1189,6 +1368,22 @@
         private System.Windows.Forms.DateTimePicker dTPFechaNacEmp;
         private System.Windows.Forms.DateTimePicker dTPFechaIngEmp;
         private System.Windows.Forms.DateTimePicker dTPFechaFact;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnAltaDF;
+        private System.Windows.Forms.TextBox tBDescPagoDF;
+        private System.Windows.Forms.TextBox tBIVADF;
+        private System.Windows.Forms.TextBox tBCostAsocDF;
+        private System.Windows.Forms.TextBox tBDescFactDF;
+        private System.Windows.Forms.TextBox tBTipoDF;
+        private System.Windows.Forms.TextBox tBIdFactDF;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.ComboBox cBMedioPagDF;
     }
 }
 
