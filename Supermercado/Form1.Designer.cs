@@ -51,6 +51,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnEditarEmp = new System.Windows.Forms.Button();
+            this.btnEliminarEmp = new System.Windows.Forms.Button();
             this.tBBuscarEmp = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.dGVEmpleados = new System.Windows.Forms.DataGridView();
@@ -86,6 +88,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnAltaEmp = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnEditClie = new System.Windows.Forms.Button();
+            this.btnElimclie = new System.Windows.Forms.Button();
+            this.tBBuscarClie = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.dGVClientes = new System.Windows.Forms.DataGridView();
             this.tBEmailClie = new System.Windows.Forms.TextBox();
             this.tBTel2Clie = new System.Windows.Forms.TextBox();
             this.tBTel1Clie = new System.Windows.Forms.TextBox();
@@ -161,12 +168,11 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminarEmp = new System.Windows.Forms.Button();
-            this.btnEditarEmp = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVClientes)).BeginInit();
             this.tabCtrlSupermercado.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -433,12 +439,33 @@
             this.tabPage2.Text = "Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnEditarEmp
+            // 
+            this.btnEditarEmp.Location = new System.Drawing.Point(608, 239);
+            this.btnEditarEmp.Name = "btnEditarEmp";
+            this.btnEditarEmp.Size = new System.Drawing.Size(267, 36);
+            this.btnEditarEmp.TabIndex = 54;
+            this.btnEditarEmp.Text = "EDITAR";
+            this.btnEditarEmp.UseVisualStyleBackColor = true;
+            this.btnEditarEmp.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminarEmp
+            // 
+            this.btnEliminarEmp.Location = new System.Drawing.Point(319, 239);
+            this.btnEliminarEmp.Name = "btnEliminarEmp";
+            this.btnEliminarEmp.Size = new System.Drawing.Size(267, 36);
+            this.btnEliminarEmp.TabIndex = 53;
+            this.btnEliminarEmp.Text = "ELIMINAR";
+            this.btnEliminarEmp.UseVisualStyleBackColor = true;
+            this.btnEliminarEmp.Click += new System.EventHandler(this.btnEliminarEmp_Click);
+            // 
             // tBBuscarEmp
             // 
             this.tBBuscarEmp.Location = new System.Drawing.Point(91, 285);
             this.tBBuscarEmp.Name = "tBBuscarEmp";
             this.tBBuscarEmp.Size = new System.Drawing.Size(341, 26);
             this.tBBuscarEmp.TabIndex = 52;
+            this.tBBuscarEmp.TextChanged += new System.EventHandler(this.tBBuscarEmp_TextChanged);
             // 
             // label54
             // 
@@ -728,6 +755,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnEditClie);
+            this.tabPage1.Controls.Add(this.btnElimclie);
+            this.tabPage1.Controls.Add(this.tBBuscarClie);
+            this.tabPage1.Controls.Add(this.label55);
+            this.tabPage1.Controls.Add(this.dGVClientes);
             this.tabPage1.Controls.Add(this.tBEmailClie);
             this.tabPage1.Controls.Add(this.tBTel2Clie);
             this.tabPage1.Controls.Add(this.tBTel1Clie);
@@ -751,53 +783,102 @@
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnEditClie
+            // 
+            this.btnEditClie.Location = new System.Drawing.Point(885, 445);
+            this.btnEditClie.Name = "btnEditClie";
+            this.btnEditClie.Size = new System.Drawing.Size(267, 36);
+            this.btnEditClie.TabIndex = 58;
+            this.btnEditClie.Text = "EDITAR";
+            this.btnEditClie.UseVisualStyleBackColor = true;
+            this.btnEditClie.Click += new System.EventHandler(this.btnEditClie_Click);
+            // 
+            // btnElimclie
+            // 
+            this.btnElimclie.Location = new System.Drawing.Point(596, 445);
+            this.btnElimclie.Name = "btnElimclie";
+            this.btnElimclie.Size = new System.Drawing.Size(267, 36);
+            this.btnElimclie.TabIndex = 57;
+            this.btnElimclie.Text = "ELIMINAR";
+            this.btnElimclie.UseVisualStyleBackColor = true;
+            this.btnElimclie.Click += new System.EventHandler(this.btnElimclie_Click);
+            // 
+            // tBBuscarClie
+            // 
+            this.tBBuscarClie.Location = new System.Drawing.Point(131, 455);
+            this.tBBuscarClie.Name = "tBBuscarClie";
+            this.tBBuscarClie.Size = new System.Drawing.Size(341, 26);
+            this.tBBuscarClie.TabIndex = 56;
+            this.tBBuscarClie.TextChanged += new System.EventHandler(this.tBBuscarClie_TextChanged);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(60, 458);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(65, 20);
+            this.label55.TabIndex = 55;
+            this.label55.Text = "Buscar";
+            // 
+            // dGVClientes
+            // 
+            this.dGVClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVClientes.Location = new System.Drawing.Point(297, 27);
+            this.dGVClientes.Name = "dGVClientes";
+            this.dGVClientes.RowHeadersWidth = 62;
+            this.dGVClientes.RowTemplate.Height = 28;
+            this.dGVClientes.Size = new System.Drawing.Size(888, 380);
+            this.dGVClientes.TabIndex = 17;
+            this.dGVClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVClientes_MouseClick);
+            // 
             // tBEmailClie
             // 
             this.tBEmailClie.Location = new System.Drawing.Point(131, 311);
             this.tBEmailClie.Name = "tBEmailClie";
-            this.tBEmailClie.Size = new System.Drawing.Size(100, 26);
+            this.tBEmailClie.Size = new System.Drawing.Size(150, 26);
             this.tBEmailClie.TabIndex = 16;
             // 
             // tBTel2Clie
             // 
             this.tBTel2Clie.Location = new System.Drawing.Point(131, 264);
             this.tBTel2Clie.Name = "tBTel2Clie";
-            this.tBTel2Clie.Size = new System.Drawing.Size(100, 26);
+            this.tBTel2Clie.Size = new System.Drawing.Size(150, 26);
             this.tBTel2Clie.TabIndex = 14;
             // 
             // tBTel1Clie
             // 
             this.tBTel1Clie.Location = new System.Drawing.Point(131, 214);
             this.tBTel1Clie.Name = "tBTel1Clie";
-            this.tBTel1Clie.Size = new System.Drawing.Size(100, 26);
+            this.tBTel1Clie.Size = new System.Drawing.Size(150, 26);
             this.tBTel1Clie.TabIndex = 12;
             // 
             // tBNumDocClie
             // 
             this.tBNumDocClie.Location = new System.Drawing.Point(131, 168);
             this.tBNumDocClie.Name = "tBNumDocClie";
-            this.tBNumDocClie.Size = new System.Drawing.Size(100, 26);
+            this.tBNumDocClie.Size = new System.Drawing.Size(150, 26);
             this.tBNumDocClie.TabIndex = 10;
             // 
             // tBTipoDocClie
             // 
             this.tBTipoDocClie.Location = new System.Drawing.Point(131, 123);
             this.tBTipoDocClie.Name = "tBTipoDocClie";
-            this.tBTipoDocClie.Size = new System.Drawing.Size(100, 26);
+            this.tBTipoDocClie.Size = new System.Drawing.Size(150, 26);
             this.tBTipoDocClie.TabIndex = 8;
             // 
             // tBApellClie
             // 
             this.tBApellClie.Location = new System.Drawing.Point(131, 75);
             this.tBApellClie.Name = "tBApellClie";
-            this.tBApellClie.Size = new System.Drawing.Size(100, 26);
+            this.tBApellClie.Size = new System.Drawing.Size(150, 26);
             this.tBApellClie.TabIndex = 6;
             // 
             // tBNombreClie
             // 
             this.tBNombreClie.Location = new System.Drawing.Point(131, 27);
             this.tBNombreClie.Name = "tBNombreClie";
-            this.tBNombreClie.Size = new System.Drawing.Size(100, 26);
+            this.tBNombreClie.Size = new System.Drawing.Size(150, 26);
             this.tBNombreClie.TabIndex = 4;
             // 
             // label8
@@ -1464,26 +1545,6 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
-            // btnEliminarEmp
-            // 
-            this.btnEliminarEmp.Location = new System.Drawing.Point(319, 239);
-            this.btnEliminarEmp.Name = "btnEliminarEmp";
-            this.btnEliminarEmp.Size = new System.Drawing.Size(267, 36);
-            this.btnEliminarEmp.TabIndex = 53;
-            this.btnEliminarEmp.Text = "ELIMINAR";
-            this.btnEliminarEmp.UseVisualStyleBackColor = true;
-            this.btnEliminarEmp.Click += new System.EventHandler(this.btnEliminarEmp_Click);
-            // 
-            // btnEditarEmp
-            // 
-            this.btnEditarEmp.Location = new System.Drawing.Point(608, 239);
-            this.btnEditarEmp.Name = "btnEditarEmp";
-            this.btnEditarEmp.Size = new System.Drawing.Size(267, 36);
-            this.btnEditarEmp.TabIndex = 54;
-            this.btnEditarEmp.Text = "EDITAR";
-            this.btnEditarEmp.UseVisualStyleBackColor = true;
-            this.btnEditarEmp.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1499,6 +1560,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVClientes)).EndInit();
             this.tabCtrlSupermercado.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -1650,6 +1712,11 @@
         private System.Windows.Forms.DataGridView dGVEmpleados;
         private System.Windows.Forms.Button btnEditarEmp;
         private System.Windows.Forms.Button btnEliminarEmp;
+        private System.Windows.Forms.Button btnEditClie;
+        private System.Windows.Forms.Button btnElimclie;
+        private System.Windows.Forms.TextBox tBBuscarClie;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.DataGridView dGVClientes;
     }
 }
 

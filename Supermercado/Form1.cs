@@ -19,6 +19,7 @@ namespace Supermercado
         {
             InitializeComponent();
             mostrarEmpleados();
+            mostrarClientes();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace Supermercado
                 tBCuilEmp.Text + "','" + tBDireEmp.Text + "','" +
                 tBTel1Emp.Text + "','" + tBTel2Emp.Text + "','" +
                 tBEmailEmp.Text + "','" + tBCargoEmp.Text + "','" +
-                tBAntiguEmp.Text + "','" + dTPFechaNacEmp.Value.ToString("yyyy-MM-dd") + "','" +
+                tBAntiguEmp.Text + "','" + dTPFechaIngEmp.Value.ToString("yyyy-MM-dd") + "','" +
                 tBSalaAnuEmp.Text + "')";
             resultado = data.ExecuteQuery(query);
             if (resultado)
@@ -71,6 +72,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarEmpleados();
         }
 
         private void btnAltaProd_Click(object sender, EventArgs e)
@@ -171,26 +173,7 @@ namespace Supermercado
 
         private void tBBuscar_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = datos.getAllData(
-            "SELECT id as \"Id\", nombre as \"Nombre\", " +
-            "apaterno as \"A. Paterno\", amaterno as \"A. Materno\", " +
-            "direccion as \"Direccion\", telefono as \"Telefono\" " +
-            "FROM \"Agenda\" " + "WHERE nombre ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR apaterno ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR amaterno ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR (nombre || ' ' || apaterno || ' ' || amaterno) ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR direccion ILIKE '%" + tBBuscar.Text + "%' " +
-            "   OR telefono ILIKE '%" + tBBuscar.Text + "%'"
-            );
-            if (ds != null)
-            {
-                //dGVPersona.DataSource = ds.Tables[0];
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar los datos.", "Sistema",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void mostrarEmpleados()
@@ -226,17 +209,174 @@ namespace Supermercado
             tBCargoEmp.Text = ds.Tables[0].Rows[0]["cargo"].ToString();
             tBAntiguEmp.Text = ds.Tables[0].Rows[0]["antiguedad"].ToString();
             tBSalaAnuEmp.Text = ds.Tables[0].Rows[0]["salario_anual"].ToString();
-            MessageBox.Show("ID seleccionado = "+id);
+            //MessageBox.Show("ID seleccionado = "+id);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            bool resultado;
+            String id = dGVEmpleados[0, dGVEmpleados.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update empleados SET nombre='" + tBNombreEmp.Text +
+                    "',apellido='" + tBApellEmp.Text + "',edad='" + tBEdadEmp.Text +
+                    "',fecha_nac='" + dTPFechaNacEmp.Value.ToString("yyyy-MM-dd") +
+                    "',tipo_doc='" + tBTipoDocEmp.Text + "',nro_doc='" + tBNumDocEmp.Text +
+                    "',cuil='" + tBCuilEmp.Text + "',direccion='" + tBDireEmp.Text +
+                    "',nro_tel_princ='" + tBTel1Emp.Text + "',nro_tel_sec='" + tBTel2Emp.Text +
+                    "',email='" + tBEmailEmp.Text + "',cargo='" + tBAntiguEmp.Text +
+                    "',antiguedad='" + tBAntiguEmp.Text + "',fecha_ingreso='" + 
+                    dTPFechaIngEmp.Value.ToString("yyyy-MM-dd") + "',salario_anual='" + tBSalaAnuEmp.Text +
+                    "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarEmpleados();
         }
 
         private void btnEliminarEmp_Click(object sender, EventArgs e)
         {
+            Datos data = new Datos();
+            String w = dGVEmpleados[0, dGVEmpleados.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM empleados WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarEmpleados(); 
+        }
 
+        private void mostrarClientes()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM clientes Order By id");
+            if (ds != null)
+            {
+                dGVClientes.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnEditClie.Enabled = true;
+            btnElimclie.Enabled = true;
+            String id = dGVClientes[0, dGVClientes.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM clientes WHERE id=" + id);
+            tBNombreClie.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+            tBApellClie.Text = ds.Tables[0].Rows[0]["apellido"].ToString();
+            tBTipoDocClie.Text = ds.Tables[0].Rows[0]["tipo_doc"].ToString();
+            tBNumDocClie.Text = ds.Tables[0].Rows[0]["nro_doc"].ToString();
+            tBTel1Clie.Text = ds.Tables[0].Rows[0]["nro_tel_princ"].ToString();
+            tBTel2Clie.Text = ds.Tables[0].Rows[0]["nro_tel_sec"].ToString();
+            tBEmailClie.Text = ds.Tables[0].Rows[0]["email"].ToString();
+            //MessageBox.Show("ID seleccionado = "+id);
+        }
+
+        private void tBBuscarEmp_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM empleados " + "WHERE nombre ILIKE '" + tBBuscarEmp.Text + "%' " +
+            "   OR apellido ILIKE '" + tBBuscarEmp.Text + "%' " +
+            "   OR (nombre || ' ' || apellido) ILIKE '" + tBBuscarEmp.Text + "%' " +
+            "   OR tipo_doc ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR nro_doc ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR cuil ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR direccion ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR nro_tel_princ ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR nro_tel_sec ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR email ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR cargo ILIKE '%" + tBBuscarEmp.Text + "%' " +
+            "   OR antiguedad ILIKE '%" + tBBuscarEmp.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVEmpleados.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditClie_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            String id = dGVClientes[0, dGVClientes.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update clientes SET nombre='" + tBNombreClie.Text +
+                    "',apellido='" + tBApellClie.Text + "',tipo_doc='" + tBTipoDocClie.Text + 
+                    "',nro_doc='" + tBNumDocClie.Text +
+                    "',nro_tel_princ='" + tBTel1Clie.Text + "',nro_tel_sec='" + tBTel2Clie.Text +
+                    "',email='" + tBEmailEmp.Text + "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarClientes();
+        }
+
+        private void btnElimclie_Click(object sender, EventArgs e)
+        {
+            Datos data = new Datos();
+            String w = dGVClientes[0, dGVClientes.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM clientes WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarClientes();
+        }
+
+        private void tBBuscarClie_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM clientes " + "WHERE nombre ILIKE '" + tBBuscarClie.Text + "%' " +
+            "   OR apellido ILIKE '" + tBBuscarClie.Text + "%' " +
+            "   OR (nombre || ' ' || apellido) ILIKE '" + tBBuscarClie.Text + "%' " +
+            "   OR tipo_doc ILIKE '%" + tBBuscarClie.Text + "%' " +
+            "   OR nro_doc ILIKE '%" + tBBuscarClie.Text + "%' " +
+            "   OR nro_tel_princ ILIKE '%" + tBBuscarClie.Text + "%' " +
+            "   OR nro_tel_sec ILIKE '%" + tBBuscarClie.Text + "%' " +
+            "   OR email ILIKE '%" + tBBuscarClie.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVClientes.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
