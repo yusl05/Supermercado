@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pBProd = new System.Windows.Forms.PictureBox();
+            this.tBBuscarProd = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.btnEliminarProd = new System.Windows.Forms.Button();
+            this.btnEditarProd = new System.Windows.Forms.Button();
+            this.dGVProductos = new System.Windows.Forms.DataGridView();
             this.tBStockProd = new System.Windows.Forms.TextBox();
             this.tBPrecioUProd = new System.Windows.Forms.TextBox();
             this.tBPesoProd = new System.Windows.Forms.TextBox();
@@ -169,6 +175,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -184,6 +192,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pBProd);
+            this.tabPage3.Controls.Add(this.tBBuscarProd);
+            this.tabPage3.Controls.Add(this.label56);
+            this.tabPage3.Controls.Add(this.btnEliminarProd);
+            this.tabPage3.Controls.Add(this.btnEditarProd);
+            this.tabPage3.Controls.Add(this.dGVProductos);
             this.tabPage3.Controls.Add(this.tBStockProd);
             this.tabPage3.Controls.Add(this.tBPrecioUProd);
             this.tabPage3.Controls.Add(this.tBPesoProd);
@@ -213,23 +227,81 @@
             this.tabPage3.Text = "Producto";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pBProd
+            // 
+            this.pBProd.Location = new System.Drawing.Point(976, 19);
+            this.pBProd.Name = "pBProd";
+            this.pBProd.Size = new System.Drawing.Size(153, 110);
+            this.pBProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBProd.TabIndex = 44;
+            this.pBProd.TabStop = false;
+            // 
+            // tBBuscarProd
+            // 
+            this.tBBuscarProd.Location = new System.Drawing.Point(360, 36);
+            this.tBBuscarProd.Name = "tBBuscarProd";
+            this.tBBuscarProd.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarProd.TabIndex = 43;
+            this.tBBuscarProd.TextChanged += new System.EventHandler(this.tBBuscarProd_TextChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(289, 36);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(65, 20);
+            this.label56.TabIndex = 42;
+            this.label56.Text = "Buscar";
+            // 
+            // btnEliminarProd
+            // 
+            this.btnEliminarProd.Location = new System.Drawing.Point(551, 79);
+            this.btnEliminarProd.Name = "btnEliminarProd";
+            this.btnEliminarProd.Size = new System.Drawing.Size(225, 36);
+            this.btnEliminarProd.TabIndex = 41;
+            this.btnEliminarProd.Text = "ELIMINAR";
+            this.btnEliminarProd.UseVisualStyleBackColor = true;
+            this.btnEliminarProd.Click += new System.EventHandler(this.btnEliminarProd_Click);
+            // 
+            // btnEditarProd
+            // 
+            this.btnEditarProd.Location = new System.Drawing.Point(288, 79);
+            this.btnEditarProd.Name = "btnEditarProd";
+            this.btnEditarProd.Size = new System.Drawing.Size(225, 36);
+            this.btnEditarProd.TabIndex = 40;
+            this.btnEditarProd.Text = "EDITAR";
+            this.btnEditarProd.UseVisualStyleBackColor = true;
+            this.btnEditarProd.Click += new System.EventHandler(this.btnEditarProd_Click);
+            // 
+            // dGVProductos
+            // 
+            this.dGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVProductos.Location = new System.Drawing.Point(288, 135);
+            this.dGVProductos.Name = "dGVProductos";
+            this.dGVProductos.RowHeadersWidth = 62;
+            this.dGVProductos.RowTemplate.Height = 28;
+            this.dGVProductos.Size = new System.Drawing.Size(841, 438);
+            this.dGVProductos.TabIndex = 39;
+            this.dGVProductos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVProductos_MouseClick);
+            // 
             // tBStockProd
             // 
-            this.tBStockProd.Location = new System.Drawing.Point(422, 110);
+            this.tBStockProd.Location = new System.Drawing.Point(149, 442);
             this.tBStockProd.Name = "tBStockProd";
             this.tBStockProd.Size = new System.Drawing.Size(100, 26);
             this.tBStockProd.TabIndex = 38;
             // 
             // tBPrecioUProd
             // 
-            this.tBPrecioUProd.Location = new System.Drawing.Point(422, 64);
+            this.tBPrecioUProd.Location = new System.Drawing.Point(149, 396);
             this.tBPrecioUProd.Name = "tBPrecioUProd";
             this.tBPrecioUProd.Size = new System.Drawing.Size(100, 26);
             this.tBPrecioUProd.TabIndex = 36;
             // 
             // tBPesoProd
             // 
-            this.tBPesoProd.Location = new System.Drawing.Point(422, 16);
+            this.tBPesoProd.Location = new System.Drawing.Point(149, 348);
             this.tBPesoProd.Name = "tBPesoProd";
             this.tBPesoProd.Size = new System.Drawing.Size(100, 26);
             this.tBPesoProd.TabIndex = 34;
@@ -238,7 +310,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(293, 116);
+            this.label34.Location = new System.Drawing.Point(20, 448);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 20);
             this.label34.TabIndex = 37;
@@ -248,7 +320,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(293, 68);
+            this.label35.Location = new System.Drawing.Point(20, 400);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(123, 20);
             this.label35.TabIndex = 35;
@@ -258,7 +330,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(293, 20);
+            this.label36.Location = new System.Drawing.Point(20, 352);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(54, 20);
             this.label36.TabIndex = 33;
@@ -385,9 +457,9 @@
             // 
             // btnAltaProd
             // 
-            this.btnAltaProd.Location = new System.Drawing.Point(297, 190);
+            this.btnAltaProd.Location = new System.Drawing.Point(24, 504);
             this.btnAltaProd.Name = "btnAltaProd";
-            this.btnAltaProd.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaProd.Size = new System.Drawing.Size(225, 36);
             this.btnAltaProd.TabIndex = 17;
             this.btnAltaProd.Text = "ALTA";
             this.btnAltaProd.UseVisualStyleBackColor = true;
@@ -1442,7 +1514,6 @@
             this.btnAgregarProd.TabIndex = 6;
             this.btnAgregarProd.Text = "Agregar producto";
             this.btnAgregarProd.UseVisualStyleBackColor = true;
-            this.btnAgregarProd.Click += new System.EventHandler(this.btnAgregarProd_Click);
             // 
             // cBVendedor
             // 
@@ -1475,7 +1546,6 @@
             this.tBBuscar.Name = "tBBuscar";
             this.tBBuscar.Size = new System.Drawing.Size(194, 26);
             this.tBBuscar.TabIndex = 2;
-            this.tBBuscar.TextChanged += new System.EventHandler(this.tBBuscar_TextChanged);
             // 
             // label51
             // 
@@ -1555,6 +1625,8 @@
             this.Text = "Form1";
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmpleados)).EndInit();
@@ -1717,6 +1789,12 @@
         private System.Windows.Forms.TextBox tBBuscarClie;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.DataGridView dGVClientes;
+        private System.Windows.Forms.DataGridView dGVProductos;
+        private System.Windows.Forms.TextBox tBBuscarProd;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button btnEliminarProd;
+        private System.Windows.Forms.Button btnEditarProd;
+        private System.Windows.Forms.PictureBox pBProd;
     }
 }
 

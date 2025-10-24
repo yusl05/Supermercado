@@ -1,11 +1,14 @@
-﻿using ImageMagick.Drawing;
+﻿using ImageMagick;
+using ImageMagick.Drawing;
 using Supermercado.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +23,7 @@ namespace Supermercado
             InitializeComponent();
             mostrarEmpleados();
             mostrarClientes();
+            mostrarProductos();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -166,15 +170,15 @@ namespace Supermercado
             }
         }
 
-        private void btnAgregarProd_Click(object sender, EventArgs e)
-        {
+        //private void btnAgregarProd_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void tBBuscar_TextChanged(object sender, EventArgs e)
-        {
+        //private void tBBuscar_TextChanged(object sender, EventArgs e)
+        //{
             
-        }
+        //}
 
         private void mostrarEmpleados()
         {
@@ -371,6 +375,128 @@ namespace Supermercado
             if (ds != null)
             {
                 dGVClientes.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void mostrarProductos()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM productos Order By id");
+            if (ds != null)
+            {
+                dGVProductos.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVProductos_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnEditClie.Enabled = true;
+            btnElimclie.Enabled = true;
+            String id = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM productos WHERE id=" + id);
+            tBIdProvProd.Text = ds.Tables[0].Rows[0]["id_proveedor"].ToString();
+            tBCodProd.Text = ds.Tables[0].Rows[0]["codigo"].ToString();
+            tBImagProd.Text = ds.Tables[0].Rows[0]["imagen"].ToString();
+            MostrarImagenDesdeURL(tBImagProd.Text);
+            tBNombreProd.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+            tBMarcaProd.Text = ds.Tables[0].Rows[0]["marca"].ToString();
+            tBTipoProd.Text = ds.Tables[0].Rows[0]["tipo"].ToString();
+            tBGrupoProd.Text = ds.Tables[0].Rows[0]["grupo"].ToString();
+            tBPesoProd.Text = ds.Tables[0].Rows[0]["peso"].ToString();
+            tBPrecioUProd.Text = ds.Tables[0].Rows[0]["precio_unidad"].ToString();
+            tBStockProd.Text = ds.Tables[0].Rows[0]["stock"].ToString();
+
+            //MessageBox.Show("ID seleccionado = "+id);
+        }
+
+        private void MostrarImagenDesdeURL(string imageUrl)
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    byte[] imageBytes = client.DownloadData(imageUrl);
+
+                    using (MagickImage magickImage = new MagickImage(imageBytes))
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            magickImage.Write(ms, MagickFormat.Png);
+                            ms.Position = 0;
+                            pBProd.Image = System.Drawing.Image.FromStream(ms);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la imagen "+ex.Message, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnEditarProd_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            String id = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update productos SET id_proveedor='" + tBIdProvProd.Text +
+                    "',codigo='" + tBCodProd.Text + "',imagen='" + tBImagProd.Text +
+                    "',nombre='" + tBNombreProd.Text + "',marca='" + tBMarcaProd.Text +
+                    "',tipo='" + tBTipoProd.Text + "',grupo='" + tBGrupoProd.Text +
+                    "',peso='" + tBPesoProd.Text + "',precio_unidad='" + tBPrecioUProd.Text +
+                    "',stock='" + tBStockProd.Text + "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarProductos();
+        }
+
+        private void btnEliminarProd_Click(object sender, EventArgs e)
+        {
+            Datos data = new Datos();
+            String w = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM productos WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarProductos();
+        }
+
+        private void tBBuscarProd_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM productos " + "WHERE codigo ILIKE '" + tBBuscarProd.Text + "%' " +
+            "   OR nombre ILIKE '" + tBBuscarProd.Text + "%' " +
+            "   OR (nombre || ' ' || marca) ILIKE '" + tBBuscarProd.Text + "%' " +
+            "   OR tipo ILIKE '%" + tBBuscarProd.Text + "%' " +
+            "   OR grupo ILIKE '%" + tBBuscarProd.Text + "%' " 
+            );
+            if (ds != null)
+            {
+                dGVProductos.DataSource = ds.Tables[0];
             }
             else
             {
