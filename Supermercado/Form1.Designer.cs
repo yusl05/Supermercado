@@ -174,6 +174,21 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGVFacturas = new System.Windows.Forms.DataGridView();
+            this.tBBuscarFact = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnElimFact = new System.Windows.Forms.Button();
+            this.btnEditarFact = new System.Windows.Forms.Button();
+            this.dGVProveedores = new System.Windows.Forms.DataGridView();
+            this.tBBuscarProv = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.btnElimProv = new System.Windows.Forms.Button();
+            this.btnEditProv = new System.Windows.Forms.Button();
+            this.dGVDetallesFact = new System.Windows.Forms.DataGridView();
+            this.tBBuscarDetallFcat = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.btnElimDetallFact = new System.Windows.Forms.Button();
+            this.btnEditDetallFact = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
@@ -188,6 +203,9 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVFacturas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -1050,6 +1068,11 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.tBBuscarFact);
+            this.tabPage4.Controls.Add(this.label57);
+            this.tabPage4.Controls.Add(this.btnElimFact);
+            this.tabPage4.Controls.Add(this.btnEditarFact);
+            this.tabPage4.Controls.Add(this.dGVFacturas);
             this.tabPage4.Controls.Add(this.dTPFechaFact);
             this.tabPage4.Controls.Add(this.tBImpoTotFact);
             this.tabPage4.Controls.Add(this.tBHraFact);
@@ -1071,35 +1094,35 @@
             // 
             // dTPFechaFact
             // 
-            this.dTPFechaFact.Location = new System.Drawing.Point(156, 109);
+            this.dTPFechaFact.Location = new System.Drawing.Point(153, 131);
             this.dTPFechaFact.Name = "dTPFechaFact";
             this.dTPFechaFact.Size = new System.Drawing.Size(200, 26);
             this.dTPFechaFact.TabIndex = 28;
             // 
             // tBImpoTotFact
             // 
-            this.tBImpoTotFact.Location = new System.Drawing.Point(156, 203);
+            this.tBImpoTotFact.Location = new System.Drawing.Point(153, 225);
             this.tBImpoTotFact.Name = "tBImpoTotFact";
             this.tBImpoTotFact.Size = new System.Drawing.Size(200, 26);
             this.tBImpoTotFact.TabIndex = 27;
             // 
             // tBHraFact
             // 
-            this.tBHraFact.Location = new System.Drawing.Point(156, 157);
+            this.tBHraFact.Location = new System.Drawing.Point(153, 179);
             this.tBHraFact.Name = "tBHraFact";
             this.tBHraFact.Size = new System.Drawing.Size(200, 26);
             this.tBHraFact.TabIndex = 25;
             // 
             // tBCodFact
             // 
-            this.tBCodFact.Location = new System.Drawing.Point(156, 64);
+            this.tBCodFact.Location = new System.Drawing.Point(153, 86);
             this.tBCodFact.Name = "tBCodFact";
             this.tBCodFact.Size = new System.Drawing.Size(200, 26);
             this.tBCodFact.TabIndex = 21;
             // 
             // tBNroFact
             // 
-            this.tBNroFact.Location = new System.Drawing.Point(156, 16);
+            this.tBNroFact.Location = new System.Drawing.Point(153, 38);
             this.tBNroFact.Name = "tBNroFact";
             this.tBNroFact.Size = new System.Drawing.Size(200, 26);
             this.tBNroFact.TabIndex = 19;
@@ -1108,7 +1131,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(27, 206);
+            this.label32.Location = new System.Drawing.Point(24, 228);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(117, 20);
             this.label32.TabIndex = 26;
@@ -1118,7 +1141,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(28, 160);
+            this.label33.Location = new System.Drawing.Point(25, 182);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(48, 20);
             this.label33.TabIndex = 24;
@@ -1128,7 +1151,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(28, 115);
+            this.label37.Location = new System.Drawing.Point(25, 137);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(64, 20);
             this.label37.TabIndex = 22;
@@ -1138,7 +1161,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(28, 67);
+            this.label38.Location = new System.Drawing.Point(25, 89);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(70, 20);
             this.label38.TabIndex = 20;
@@ -1148,7 +1171,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(28, 19);
+            this.label39.Location = new System.Drawing.Point(25, 41);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(76, 20);
             this.label39.TabIndex = 18;
@@ -1156,9 +1179,9 @@
             // 
             // btnAltaFact
             // 
-            this.btnAltaFact.Location = new System.Drawing.Point(125, 264);
+            this.btnAltaFact.Location = new System.Drawing.Point(28, 287);
             this.btnAltaFact.Name = "btnAltaFact";
-            this.btnAltaFact.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaFact.Size = new System.Drawing.Size(325, 36);
             this.btnAltaFact.TabIndex = 17;
             this.btnAltaFact.Text = "ALTA";
             this.btnAltaFact.UseVisualStyleBackColor = true;
@@ -1166,6 +1189,11 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.tBBuscarProv);
+            this.tabPage5.Controls.Add(this.label58);
+            this.tabPage5.Controls.Add(this.btnElimProv);
+            this.tabPage5.Controls.Add(this.btnEditProv);
+            this.tabPage5.Controls.Add(this.dGVProveedores);
             this.tabPage5.Controls.Add(this.tBEmailProv);
             this.tabPage5.Controls.Add(this.label43);
             this.tabPage5.Controls.Add(this.tBTel2Prov);
@@ -1291,9 +1319,9 @@
             // 
             // btnAltaProv
             // 
-            this.btnAltaProv.Location = new System.Drawing.Point(134, 331);
+            this.btnAltaProv.Location = new System.Drawing.Point(40, 331);
             this.btnAltaProv.Name = "btnAltaProv";
-            this.btnAltaProv.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaProv.Size = new System.Drawing.Size(316, 36);
             this.btnAltaProv.TabIndex = 28;
             this.btnAltaProv.Text = "ALTA";
             this.btnAltaProv.UseVisualStyleBackColor = true;
@@ -1301,6 +1329,11 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.tBBuscarDetallFcat);
+            this.tabPage6.Controls.Add(this.label59);
+            this.tabPage6.Controls.Add(this.btnElimDetallFact);
+            this.tabPage6.Controls.Add(this.btnEditDetallFact);
+            this.tabPage6.Controls.Add(this.dGVDetallesFact);
             this.tabPage6.Controls.Add(this.cBMedioPagDF);
             this.tabPage6.Controls.Add(this.btnAltaDF);
             this.tabPage6.Controls.Add(this.tBDescPagoDF);
@@ -1338,9 +1371,9 @@
             // 
             // btnAltaDF
             // 
-            this.btnAltaDF.Location = new System.Drawing.Point(123, 360);
+            this.btnAltaDF.Location = new System.Drawing.Point(34, 362);
             this.btnAltaDF.Name = "btnAltaDF";
-            this.btnAltaDF.Size = new System.Drawing.Size(131, 36);
+            this.btnAltaDF.Size = new System.Drawing.Size(387, 36);
             this.btnAltaDF.TabIndex = 46;
             this.btnAltaDF.Text = "ALTA";
             this.btnAltaDF.UseVisualStyleBackColor = true;
@@ -1615,6 +1648,153 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
+            // dGVFacturas
+            // 
+            this.dGVFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVFacturas.Location = new System.Drawing.Point(401, 16);
+            this.dGVFacturas.Name = "dGVFacturas";
+            this.dGVFacturas.RowHeadersWidth = 62;
+            this.dGVFacturas.RowTemplate.Height = 28;
+            this.dGVFacturas.Size = new System.Drawing.Size(745, 307);
+            this.dGVFacturas.TabIndex = 29;
+            this.dGVFacturas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVFacturas_MouseClick);
+            // 
+            // tBBuscarFact
+            // 
+            this.tBBuscarFact.Location = new System.Drawing.Point(100, 353);
+            this.tBBuscarFact.Name = "tBBuscarFact";
+            this.tBBuscarFact.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarFact.TabIndex = 47;
+            this.tBBuscarFact.TextChanged += new System.EventHandler(this.tBBuscarFact_TextChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(29, 353);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(65, 20);
+            this.label57.TabIndex = 46;
+            this.label57.Text = "Buscar";
+            // 
+            // btnElimFact
+            // 
+            this.btnElimFact.Location = new System.Drawing.Point(291, 396);
+            this.btnElimFact.Name = "btnElimFact";
+            this.btnElimFact.Size = new System.Drawing.Size(225, 36);
+            this.btnElimFact.TabIndex = 45;
+            this.btnElimFact.Text = "ELIMINAR";
+            this.btnElimFact.UseVisualStyleBackColor = true;
+            this.btnElimFact.Click += new System.EventHandler(this.btnElimFact_Click);
+            // 
+            // btnEditarFact
+            // 
+            this.btnEditarFact.Location = new System.Drawing.Point(28, 396);
+            this.btnEditarFact.Name = "btnEditarFact";
+            this.btnEditarFact.Size = new System.Drawing.Size(225, 36);
+            this.btnEditarFact.TabIndex = 44;
+            this.btnEditarFact.Text = "EDITAR";
+            this.btnEditarFact.UseVisualStyleBackColor = true;
+            this.btnEditarFact.Click += new System.EventHandler(this.btnEditarFact_Click);
+            // 
+            // dGVProveedores
+            // 
+            this.dGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVProveedores.Location = new System.Drawing.Point(390, 46);
+            this.dGVProveedores.Name = "dGVProveedores";
+            this.dGVProveedores.RowHeadersWidth = 62;
+            this.dGVProveedores.RowTemplate.Height = 28;
+            this.dGVProveedores.Size = new System.Drawing.Size(764, 321);
+            this.dGVProveedores.TabIndex = 41;
+            this.dGVProveedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVProveedores_MouseClick);
+            // 
+            // tBBuscarProv
+            // 
+            this.tBBuscarProv.Location = new System.Drawing.Point(110, 411);
+            this.tBBuscarProv.Name = "tBBuscarProv";
+            this.tBBuscarProv.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarProv.TabIndex = 51;
+            this.tBBuscarProv.TextChanged += new System.EventHandler(this.tBBuscarProv_TextChanged);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(39, 411);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(65, 20);
+            this.label58.TabIndex = 50;
+            this.label58.Text = "Buscar";
+            // 
+            // btnElimProv
+            // 
+            this.btnElimProv.Location = new System.Drawing.Point(301, 454);
+            this.btnElimProv.Name = "btnElimProv";
+            this.btnElimProv.Size = new System.Drawing.Size(225, 36);
+            this.btnElimProv.TabIndex = 49;
+            this.btnElimProv.Text = "ELIMINAR";
+            this.btnElimProv.UseVisualStyleBackColor = true;
+            this.btnElimProv.Click += new System.EventHandler(this.btnElimProv_Click);
+            // 
+            // btnEditProv
+            // 
+            this.btnEditProv.Location = new System.Drawing.Point(38, 454);
+            this.btnEditProv.Name = "btnEditProv";
+            this.btnEditProv.Size = new System.Drawing.Size(225, 36);
+            this.btnEditProv.TabIndex = 48;
+            this.btnEditProv.Text = "EDITAR";
+            this.btnEditProv.UseVisualStyleBackColor = true;
+            this.btnEditProv.Click += new System.EventHandler(this.btnEditProv_Click);
+            // 
+            // dGVDetallesFact
+            // 
+            this.dGVDetallesFact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVDetallesFact.Location = new System.Drawing.Point(466, 28);
+            this.dGVDetallesFact.Name = "dGVDetallesFact";
+            this.dGVDetallesFact.RowHeadersWidth = 62;
+            this.dGVDetallesFact.RowTemplate.Height = 28;
+            this.dGVDetallesFact.Size = new System.Drawing.Size(699, 370);
+            this.dGVDetallesFact.TabIndex = 48;
+            this.dGVDetallesFact.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVDetallesFact_MouseClick);
+            // 
+            // tBBuscarDetallFcat
+            // 
+            this.tBBuscarDetallFcat.Location = new System.Drawing.Point(106, 424);
+            this.tBBuscarDetallFcat.Name = "tBBuscarDetallFcat";
+            this.tBBuscarDetallFcat.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarDetallFcat.TabIndex = 55;
+            this.tBBuscarDetallFcat.TextChanged += new System.EventHandler(this.tBBuscarDetallFcat_TextChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(35, 424);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(65, 20);
+            this.label59.TabIndex = 54;
+            this.label59.Text = "Buscar";
+            // 
+            // btnElimDetallFact
+            // 
+            this.btnElimDetallFact.Location = new System.Drawing.Point(297, 467);
+            this.btnElimDetallFact.Name = "btnElimDetallFact";
+            this.btnElimDetallFact.Size = new System.Drawing.Size(225, 36);
+            this.btnElimDetallFact.TabIndex = 53;
+            this.btnElimDetallFact.Text = "ELIMINAR";
+            this.btnElimDetallFact.UseVisualStyleBackColor = true;
+            this.btnElimDetallFact.Click += new System.EventHandler(this.btnElimDetallFact_Click);
+            // 
+            // btnEditDetallFact
+            // 
+            this.btnEditDetallFact.Location = new System.Drawing.Point(34, 467);
+            this.btnEditDetallFact.Name = "btnEditDetallFact";
+            this.btnEditDetallFact.Size = new System.Drawing.Size(225, 36);
+            this.btnEditDetallFact.TabIndex = 52;
+            this.btnEditDetallFact.Text = "EDITAR";
+            this.btnEditDetallFact.UseVisualStyleBackColor = true;
+            this.btnEditDetallFact.Click += new System.EventHandler(this.btnEditDetallFact_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1644,6 +1824,9 @@
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVFacturas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1795,6 +1978,21 @@
         private System.Windows.Forms.Button btnEliminarProd;
         private System.Windows.Forms.Button btnEditarProd;
         private System.Windows.Forms.PictureBox pBProd;
+        private System.Windows.Forms.DataGridView dGVFacturas;
+        private System.Windows.Forms.TextBox tBBuscarFact;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Button btnElimFact;
+        private System.Windows.Forms.Button btnEditarFact;
+        private System.Windows.Forms.TextBox tBBuscarProv;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Button btnElimProv;
+        private System.Windows.Forms.Button btnEditProv;
+        private System.Windows.Forms.DataGridView dGVProveedores;
+        private System.Windows.Forms.TextBox tBBuscarDetallFcat;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Button btnElimDetallFact;
+        private System.Windows.Forms.Button btnEditDetallFact;
+        private System.Windows.Forms.DataGridView dGVDetallesFact;
     }
 }
 

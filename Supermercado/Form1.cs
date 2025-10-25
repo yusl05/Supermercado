@@ -24,6 +24,9 @@ namespace Supermercado
             mostrarEmpleados();
             mostrarClientes();
             mostrarProductos();
+            mostrarFacturas();
+            mostrarProveedores();
+            mostrarFacturasDetalles(); 
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarClientes();
         }
 
         private void btnAltaEmp_Click(object sender, EventArgs e)
@@ -101,6 +105,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarProductos();
         }
 
         private void btnAltaFact_Click(object sender, EventArgs e)
@@ -123,6 +128,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarFacturas();  
         }
 
         private void btnAltaProv_Click(object sender, EventArgs e)
@@ -145,6 +151,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarProveedores();
         }
 
         private void btnAltaDF_Click(object sender, EventArgs e)
@@ -168,6 +175,7 @@ namespace Supermercado
                 MessageBox.Show("Error al agregar el registro", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            mostrarFacturasDetalles();
         }
 
         //private void btnAgregarProd_Click(object sender, EventArgs e)
@@ -497,6 +505,259 @@ namespace Supermercado
             if (ds != null)
             {
                 dGVProductos.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void mostrarFacturas()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM facturas Order By id");
+            if (ds != null)
+            {
+                dGVFacturas.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditarFact_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            String id = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update facturas SET numero='" + tBNroFact.Text +
+                    "',codigo='" + tBCodFact.Text + "',hora='" + tBHraFact.Text +
+                    "',importe_total='" + tBImpoTotFact.Text + "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarFacturas();
+        }
+
+        private void btnElimFact_Click(object sender, EventArgs e)
+        {
+            Datos data = new Datos();
+            String w = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM facturas WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarFacturas();
+        }
+
+        private void tBBuscarFact_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM facturas " + "WHERE numero ILIKE '%" + tBBuscarFact.Text + "%' " +
+            "   OR codigo ILIKE '%" + tBBuscarFact.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVFacturas.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVFacturas_MouseClick(object sender, MouseEventArgs e)
+        {
+            String id = dGVFacturas[0, dGVFacturas.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM facturas WHERE id=" + id);
+            tBNroFact.Text = ds.Tables[0].Rows[0]["numero"].ToString();
+            tBCodFact.Text = ds.Tables[0].Rows[0]["codigo"].ToString();
+            tBHraFact.Text = ds.Tables[0].Rows[0]["hora"].ToString();
+            tBImpoTotFact.Text = ds.Tables[0].Rows[0]["importe_total"].ToString();
+        }
+
+        private void mostrarProveedores()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM proveedores Order By id");
+            if (ds != null)
+            {
+                dGVProveedores.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVProveedores_MouseClick(object sender, MouseEventArgs e)
+        {
+            String id = dGVProveedores[0, dGVProveedores.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM proveedores WHERE id=" + id);
+            tBEmpProv.Text = ds.Tables[0].Rows[0]["empresa"].ToString();
+            tBTipoProdProv.Text = ds.Tables[0].Rows[0]["tipo_producto"].ToString();
+            tBDireProv.Text = ds.Tables[0].Rows[0]["direccion"].ToString();
+            tBTel1Prov.Text = ds.Tables[0].Rows[0]["nro_tel_princ"].ToString();
+            tBTel2Prov.Text = ds.Tables[0].Rows[0]["nro_tel_sec"].ToString();
+            tBEmailProv.Text = ds.Tables[0].Rows[0]["email"].ToString();
+        }
+
+        private void btnEditProv_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            String id = dGVProveedores[0, dGVProveedores.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update proveedores SET empresa='" + tBEmpProv.Text +
+                    "',tipo_producto='" + tBTipoProdProv.Text + "',direccion='" + tBDireProv.Text +
+                    "',nro_tel_princ='" + tBTel1Prov.Text + "',nro_tel_sec='" + tBTel2Prov.Text +
+                    "',email='" + tBEmailProv.Text + "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarProveedores();
+        }
+
+        private void btnElimProv_Click(object sender, EventArgs e)
+        {
+            Datos data = new Datos();
+            String w = dGVProveedores[0, dGVProveedores.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM proveedores WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarProveedores();
+        }
+
+        private void tBBuscarProv_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM proveedores " + "WHERE empresa ILIKE '" + tBBuscarProv.Text + "%' " +
+            "   OR tipo_producto ILIKE '" + tBBuscarProv.Text + "%' " +
+            "   OR direccion ILIKE '%" + tBBuscarProv.Text + "%' " +
+            "   OR nro_tel_princ ILIKE '%" + tBBuscarProv.Text + "%' " + 
+            "   OR nro_tel_sec ILIKE '%" + tBBuscarProv.Text + "%' " +
+            "   OR email ILIKE '%" + tBBuscarProv.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVProveedores.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVDetallesFact_MouseClick(object sender, MouseEventArgs e)
+        {
+            String id = dGVDetallesFact[0, dGVDetallesFact.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM facturas_detalles WHERE id=" + id);
+            tBIdFactDF.Text = ds.Tables[0].Rows[0]["id_factura"].ToString();
+            tBTipoDF.Text = ds.Tables[0].Rows[0]["tipo"].ToString();
+            tBDescFactDF.Text = ds.Tables[0].Rows[0]["descr_factura"].ToString();
+            tBCostAsocDF.Text = ds.Tables[0].Rows[0]["costo_asoc"].ToString();
+            tBIVADF.Text = ds.Tables[0].Rows[0]["iva"].ToString();
+            cBMedioPagDF.Text = ds.Tables[0].Rows[0]["medio_de_pago"].ToString();
+            tBDescPagoDF.Text = ds.Tables[0].Rows[0]["descr_pago"].ToString();
+        }
+
+        private void mostrarFacturasDetalles()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM facturas_detalles Order By id");
+            if (ds != null)
+            {
+                dGVDetallesFact.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditDetallFact_Click(object sender, EventArgs e)
+        {
+            bool resultado;
+            String id = dGVDetallesFact[0, dGVDetallesFact.CurrentCell.RowIndex].Value.ToString();
+            string query = "Update facturas_detalles SET id_factura='" + tBIdFactDF.Text +
+                    "',tipo='" + tBTipoDF.Text + "',descr_factura='" + tBDescFactDF.Text +
+                    "',costo_asoc='" + tBCostAsocDF.Text + "',iva='" + tBIVADF.Text +
+                    "',medio_de_pago='" + cBMedioPagDF.Text + "',descr_pago='" + tBDescPagoDF.Text + 
+                    "'WHERE id = " + id;
+            resultado = datos.ExecuteQuery(query);
+            if (resultado)
+            {
+                MessageBox.Show("Registro agregado", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mostrarFacturasDetalles();
+        }
+
+        private void btnElimDetallFact_Click(object sender, EventArgs e)
+        {
+            Datos data = new Datos();
+            String w = dGVProductos[0, dGVProductos.CurrentCell.RowIndex].Value.ToString();
+            String query = "DELETE FROM facturas_detalles WHERE id =" + w;
+            bool flag = data.ExecuteQuery(query);
+            if (flag)
+            {
+                MessageBox.Show("Dato eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Dato no eliminado");
+            }
+            mostrarFacturasDetalles();
+        }
+
+        private void tBBuscarDetallFcat_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM facturas_detalles " + "WHERE descr_factura " +
+            "ILIKE '%" + tBBuscarDetallFcat.Text + "%' " +
+            "   OR descr_pago ILIKE '%" + tBBuscarDetallFcat.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVDetallesFact.DataSource = ds.Tables[0];
             }
             else
             {
