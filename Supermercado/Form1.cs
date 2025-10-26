@@ -21,6 +21,7 @@ namespace Supermercado
         public Form1()
         {
             InitializeComponent();
+            tBTotalVta.Text = "0";
             mostrarEmpleados();
             mostrarClientes();
             mostrarProductos();
@@ -422,8 +423,6 @@ namespace Supermercado
             tBPesoProd.Text = ds.Tables[0].Rows[0]["peso"].ToString();
             tBPrecioUProd.Text = ds.Tables[0].Rows[0]["precio_unidad"].ToString();
             tBStockProd.Text = ds.Tables[0].Rows[0]["stock"].ToString();
-
-            //MessageBox.Show("ID seleccionado = "+id);
         }
 
         private void MostrarImagenDesdeURL(string imageUrl)
@@ -763,6 +762,75 @@ namespace Supermercado
             {
                 MessageBox.Show("Error al cargar los datos.", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCerrarVenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarProd_Click(object sender, EventArgs e)
+        {
+
+            if (!int.TryParse(tBCantidad.Text, out int cantidad) || cantidad <= 0)
+            {
+                MessageBox.Show("Por favor ingresa una cantidad válida.");
+                return;
+            }
+            string id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT nombre, marca, codigo, precio_unidad FROM productos WHERE id=" + id);
+
+
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow fila = ds.Tables[0].Rows[0];
+
+                // Calcular subtotal
+                decimal precio = Convert.ToDecimal(fila["precio_unidad"]);
+                decimal subtotal = precio * cantidad;
+
+                // Agregar al carrito
+                dGVCesta.Rows.Add(fila["nombre"].ToString(),fila["marca"].ToString(),
+                fila["codigo"].ToString(),cantidad,precio.ToString("0.00"));
+
+                tBTotalVta.Text = (Convert.ToDecimal(tBTotalVta.Text) + subtotal).ToString("0.00"); 
+            }
+        }
+
+        private void tBBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = datos.getAllData(
+            "SELECT * " +
+            "FROM productos " + "WHERE codigo ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR nombre ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR (nombre || ' ' || marca) ILIKE '" + tBBuscar.Text + "%' " +
+            "   OR tipo ILIKE '%" + tBBuscar.Text + "%' " +
+            "   OR grupo ILIKE '%" + tBBuscar.Text + "%' "
+            );
+            if (ds != null)
+            {
+                dGVMostrarProdVtas.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dGVMostrarProdVtas_MouseClick(object sender, MouseEventArgs e)
+        {
+            String id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
+            DataSet ds = datos.getAllData("SELECT * FROM facturas_detalles WHERE id=" + id);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow fila = ds.Tables[0].Rows[0];
+
+                // Crear una nueva fila para el carrito
+                int i = dGVCesta.Rows.Add();
             }
         }
     }

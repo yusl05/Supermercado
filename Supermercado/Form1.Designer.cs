@@ -116,6 +116,11 @@
             this.btnAltaClie = new System.Windows.Forms.Button();
             this.tabCtrlSupermercado = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tBBuscarFact = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnElimFact = new System.Windows.Forms.Button();
+            this.btnEditarFact = new System.Windows.Forms.Button();
+            this.dGVFacturas = new System.Windows.Forms.DataGridView();
             this.dTPFechaFact = new System.Windows.Forms.DateTimePicker();
             this.tBImpoTotFact = new System.Windows.Forms.TextBox();
             this.tBHraFact = new System.Windows.Forms.TextBox();
@@ -128,6 +133,11 @@
             this.label39 = new System.Windows.Forms.Label();
             this.btnAltaFact = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tBBuscarProv = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.btnElimProv = new System.Windows.Forms.Button();
+            this.btnEditProv = new System.Windows.Forms.Button();
+            this.dGVProveedores = new System.Windows.Forms.DataGridView();
             this.tBEmailProv = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.tBTel2Prov = new System.Windows.Forms.TextBox();
@@ -142,6 +152,11 @@
             this.label42 = new System.Windows.Forms.Label();
             this.btnAltaProv = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tBBuscarDetallFcat = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.btnElimDetallFact = new System.Windows.Forms.Button();
+            this.btnEditDetallFact = new System.Windows.Forms.Button();
+            this.dGVDetallesFact = new System.Windows.Forms.DataGridView();
             this.cBMedioPagDF = new System.Windows.Forms.ComboBox();
             this.btnAltaDF = new System.Windows.Forms.Button();
             this.tBDescPagoDF = new System.Windows.Forms.TextBox();
@@ -158,37 +173,26 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.btnCerrarVenta = new System.Windows.Forms.Button();
             this.label53 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dGVCesta = new System.Windows.Forms.DataGridView();
             this.label52 = new System.Windows.Forms.Label();
             this.btnAgregarProd = new System.Windows.Forms.Button();
             this.cBVendedor = new System.Windows.Forms.ComboBox();
-            this.cBFact = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panDetallVta = new System.Windows.Forms.Panel();
+            this.label60 = new System.Windows.Forms.Label();
             this.tBBuscar = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dGVFacturas = new System.Windows.Forms.DataGridView();
-            this.tBBuscarFact = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.btnElimFact = new System.Windows.Forms.Button();
-            this.btnEditarFact = new System.Windows.Forms.Button();
-            this.dGVProveedores = new System.Windows.Forms.DataGridView();
-            this.tBBuscarProv = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.btnElimProv = new System.Windows.Forms.Button();
-            this.btnEditProv = new System.Windows.Forms.Button();
-            this.dGVDetallesFact = new System.Windows.Forms.DataGridView();
-            this.tBBuscarDetallFcat = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.btnElimDetallFact = new System.Windows.Forms.Button();
-            this.btnEditDetallFact = new System.Windows.Forms.Button();
+            this.dGVMostrarProdVtas = new System.Windows.Forms.DataGridView();
+            this.tBCantidad = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label62 = new System.Windows.Forms.Label();
+            this.tBTotalVta = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
@@ -198,14 +202,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVClientes)).BeginInit();
             this.tabCtrlSupermercado.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVFacturas)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProveedores)).BeginInit();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVCesta)).BeginInit();
+            this.panDetallVta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -1092,6 +1097,55 @@
             this.tabPage4.Text = "Facturas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // tBBuscarFact
+            // 
+            this.tBBuscarFact.Location = new System.Drawing.Point(100, 353);
+            this.tBBuscarFact.Name = "tBBuscarFact";
+            this.tBBuscarFact.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarFact.TabIndex = 47;
+            this.tBBuscarFact.TextChanged += new System.EventHandler(this.tBBuscarFact_TextChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(29, 353);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(65, 20);
+            this.label57.TabIndex = 46;
+            this.label57.Text = "Buscar";
+            // 
+            // btnElimFact
+            // 
+            this.btnElimFact.Location = new System.Drawing.Point(291, 396);
+            this.btnElimFact.Name = "btnElimFact";
+            this.btnElimFact.Size = new System.Drawing.Size(225, 36);
+            this.btnElimFact.TabIndex = 45;
+            this.btnElimFact.Text = "ELIMINAR";
+            this.btnElimFact.UseVisualStyleBackColor = true;
+            this.btnElimFact.Click += new System.EventHandler(this.btnElimFact_Click);
+            // 
+            // btnEditarFact
+            // 
+            this.btnEditarFact.Location = new System.Drawing.Point(28, 396);
+            this.btnEditarFact.Name = "btnEditarFact";
+            this.btnEditarFact.Size = new System.Drawing.Size(225, 36);
+            this.btnEditarFact.TabIndex = 44;
+            this.btnEditarFact.Text = "EDITAR";
+            this.btnEditarFact.UseVisualStyleBackColor = true;
+            this.btnEditarFact.Click += new System.EventHandler(this.btnEditarFact_Click);
+            // 
+            // dGVFacturas
+            // 
+            this.dGVFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVFacturas.Location = new System.Drawing.Point(401, 16);
+            this.dGVFacturas.Name = "dGVFacturas";
+            this.dGVFacturas.RowHeadersWidth = 62;
+            this.dGVFacturas.RowTemplate.Height = 28;
+            this.dGVFacturas.Size = new System.Drawing.Size(745, 307);
+            this.dGVFacturas.TabIndex = 29;
+            this.dGVFacturas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVFacturas_MouseClick);
+            // 
             // dTPFechaFact
             // 
             this.dTPFechaFact.Location = new System.Drawing.Point(153, 131);
@@ -1214,6 +1268,55 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Proveedores";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tBBuscarProv
+            // 
+            this.tBBuscarProv.Location = new System.Drawing.Point(110, 411);
+            this.tBBuscarProv.Name = "tBBuscarProv";
+            this.tBBuscarProv.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarProv.TabIndex = 51;
+            this.tBBuscarProv.TextChanged += new System.EventHandler(this.tBBuscarProv_TextChanged);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(39, 411);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(65, 20);
+            this.label58.TabIndex = 50;
+            this.label58.Text = "Buscar";
+            // 
+            // btnElimProv
+            // 
+            this.btnElimProv.Location = new System.Drawing.Point(301, 454);
+            this.btnElimProv.Name = "btnElimProv";
+            this.btnElimProv.Size = new System.Drawing.Size(225, 36);
+            this.btnElimProv.TabIndex = 49;
+            this.btnElimProv.Text = "ELIMINAR";
+            this.btnElimProv.UseVisualStyleBackColor = true;
+            this.btnElimProv.Click += new System.EventHandler(this.btnElimProv_Click);
+            // 
+            // btnEditProv
+            // 
+            this.btnEditProv.Location = new System.Drawing.Point(38, 454);
+            this.btnEditProv.Name = "btnEditProv";
+            this.btnEditProv.Size = new System.Drawing.Size(225, 36);
+            this.btnEditProv.TabIndex = 48;
+            this.btnEditProv.Text = "EDITAR";
+            this.btnEditProv.UseVisualStyleBackColor = true;
+            this.btnEditProv.Click += new System.EventHandler(this.btnEditProv_Click);
+            // 
+            // dGVProveedores
+            // 
+            this.dGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVProveedores.Location = new System.Drawing.Point(390, 46);
+            this.dGVProveedores.Name = "dGVProveedores";
+            this.dGVProveedores.RowHeadersWidth = 62;
+            this.dGVProveedores.RowTemplate.Height = 28;
+            this.dGVProveedores.Size = new System.Drawing.Size(764, 321);
+            this.dGVProveedores.TabIndex = 41;
+            this.dGVProveedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVProveedores_MouseClick);
             // 
             // tBEmailProv
             // 
@@ -1357,6 +1460,55 @@
             this.tabPage6.Text = "Detalles Facturas";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // tBBuscarDetallFcat
+            // 
+            this.tBBuscarDetallFcat.Location = new System.Drawing.Point(106, 424);
+            this.tBBuscarDetallFcat.Name = "tBBuscarDetallFcat";
+            this.tBBuscarDetallFcat.Size = new System.Drawing.Size(416, 26);
+            this.tBBuscarDetallFcat.TabIndex = 55;
+            this.tBBuscarDetallFcat.TextChanged += new System.EventHandler(this.tBBuscarDetallFcat_TextChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(35, 424);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(65, 20);
+            this.label59.TabIndex = 54;
+            this.label59.Text = "Buscar";
+            // 
+            // btnElimDetallFact
+            // 
+            this.btnElimDetallFact.Location = new System.Drawing.Point(297, 467);
+            this.btnElimDetallFact.Name = "btnElimDetallFact";
+            this.btnElimDetallFact.Size = new System.Drawing.Size(225, 36);
+            this.btnElimDetallFact.TabIndex = 53;
+            this.btnElimDetallFact.Text = "ELIMINAR";
+            this.btnElimDetallFact.UseVisualStyleBackColor = true;
+            this.btnElimDetallFact.Click += new System.EventHandler(this.btnElimDetallFact_Click);
+            // 
+            // btnEditDetallFact
+            // 
+            this.btnEditDetallFact.Location = new System.Drawing.Point(34, 467);
+            this.btnEditDetallFact.Name = "btnEditDetallFact";
+            this.btnEditDetallFact.Size = new System.Drawing.Size(225, 36);
+            this.btnEditDetallFact.TabIndex = 52;
+            this.btnEditDetallFact.Text = "EDITAR";
+            this.btnEditDetallFact.UseVisualStyleBackColor = true;
+            this.btnEditDetallFact.Click += new System.EventHandler(this.btnEditDetallFact_Click);
+            // 
+            // dGVDetallesFact
+            // 
+            this.dGVDetallesFact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVDetallesFact.Location = new System.Drawing.Point(466, 28);
+            this.dGVDetallesFact.Name = "dGVDetallesFact";
+            this.dGVDetallesFact.RowHeadersWidth = 62;
+            this.dGVDetallesFact.RowTemplate.Height = 28;
+            this.dGVDetallesFact.Size = new System.Drawing.Size(699, 370);
+            this.dGVDetallesFact.TabIndex = 48;
+            this.dGVDetallesFact.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVDetallesFact_MouseClick);
+            // 
             // cBMedioPagDF
             // 
             this.cBMedioPagDF.FormattingEnabled = true;
@@ -1493,16 +1645,18 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.tBCantidad);
+            this.tabPage7.Controls.Add(this.label61);
+            this.tabPage7.Controls.Add(this.btnCerrarVenta);
             this.tabPage7.Controls.Add(this.label53);
-            this.tabPage7.Controls.Add(this.dataGridView2);
+            this.tabPage7.Controls.Add(this.dGVCesta);
             this.tabPage7.Controls.Add(this.label52);
             this.tabPage7.Controls.Add(this.btnAgregarProd);
             this.tabPage7.Controls.Add(this.cBVendedor);
-            this.tabPage7.Controls.Add(this.cBFact);
-            this.tabPage7.Controls.Add(this.panel1);
+            this.tabPage7.Controls.Add(this.panDetallVta);
             this.tabPage7.Controls.Add(this.tBBuscar);
             this.tabPage7.Controls.Add(this.label51);
-            this.tabPage7.Controls.Add(this.dataGridView1);
+            this.tabPage7.Controls.Add(this.dGVMostrarProdVtas);
             this.tabPage7.Location = new System.Drawing.Point(4, 29);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -1511,29 +1665,45 @@
             this.tabPage7.Text = "Venta";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // btnCerrarVenta
+            // 
+            this.btnCerrarVenta.Location = new System.Drawing.Point(336, 533);
+            this.btnCerrarVenta.Name = "btnCerrarVenta";
+            this.btnCerrarVenta.Size = new System.Drawing.Size(306, 44);
+            this.btnCerrarVenta.TabIndex = 10;
+            this.btnCerrarVenta.Text = "Cerrar venta";
+            this.btnCerrarVenta.UseVisualStyleBackColor = true;
+            this.btnCerrarVenta.Click += new System.EventHandler(this.btnCerrarVenta_Click);
+            // 
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(7, 222);
+            this.label53.Location = new System.Drawing.Point(8, 293);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(55, 20);
             this.label53.TabIndex = 9;
             this.label53.Text = "Cesta:";
             // 
-            // dataGridView2
+            // dGVCesta
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 257);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(636, 150);
-            this.dataGridView2.TabIndex = 8;
+            this.dGVCesta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVCesta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre,
+            this.marca,
+            this.codigo,
+            this.cantidad,
+            this.precio});
+            this.dGVCesta.Location = new System.Drawing.Point(7, 328);
+            this.dGVCesta.Name = "dGVCesta";
+            this.dGVCesta.RowHeadersWidth = 62;
+            this.dGVCesta.RowTemplate.Height = 28;
+            this.dGVCesta.Size = new System.Drawing.Size(636, 199);
+            this.dGVCesta.TabIndex = 8;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(842, 24);
+            this.label52.Location = new System.Drawing.Point(986, 9);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(100, 20);
             this.label52.TabIndex = 7;
@@ -1541,37 +1711,41 @@
             // 
             // btnAgregarProd
             // 
-            this.btnAgregarProd.Location = new System.Drawing.Point(6, 154);
+            this.btnAgregarProd.Location = new System.Drawing.Point(11, 245);
             this.btnAgregarProd.Name = "btnAgregarProd";
             this.btnAgregarProd.Size = new System.Drawing.Size(306, 44);
             this.btnAgregarProd.TabIndex = 6;
             this.btnAgregarProd.Text = "Agregar producto";
             this.btnAgregarProd.UseVisualStyleBackColor = true;
+            this.btnAgregarProd.Click += new System.EventHandler(this.btnAgregarProd_Click);
             // 
             // cBVendedor
             // 
             this.cBVendedor.FormattingEnabled = true;
-            this.cBVendedor.Location = new System.Drawing.Point(948, 21);
+            this.cBVendedor.Location = new System.Drawing.Point(1092, 6);
             this.cBVendedor.Name = "cBVendedor";
             this.cBVendedor.Size = new System.Drawing.Size(92, 28);
             this.cBVendedor.TabIndex = 5;
             // 
-            // cBFact
+            // panDetallVta
             // 
-            this.cBFact.AutoSize = true;
-            this.cBFact.Location = new System.Drawing.Point(648, 154);
-            this.cBFact.Name = "cBFact";
-            this.cBFact.Size = new System.Drawing.Size(90, 24);
-            this.cBFact.TabIndex = 4;
-            this.cBFact.Text = "Factura";
-            this.cBFact.UseVisualStyleBackColor = true;
+            this.panDetallVta.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panDetallVta.Controls.Add(this.tBTotalVta);
+            this.panDetallVta.Controls.Add(this.label62);
+            this.panDetallVta.Controls.Add(this.label60);
+            this.panDetallVta.Location = new System.Drawing.Point(648, 257);
+            this.panDetallVta.Name = "panDetallVta";
+            this.panDetallVta.Size = new System.Drawing.Size(544, 327);
+            this.panDetallVta.TabIndex = 3;
             // 
-            // panel1
+            // label60
             // 
-            this.panel1.Location = new System.Drawing.Point(648, 191);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 216);
-            this.panel1.TabIndex = 3;
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(3, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(71, 20);
+            this.label60.TabIndex = 10;
+            this.label60.Text = "Detalles:";
             // 
             // tBBuscar
             // 
@@ -1579,6 +1753,7 @@
             this.tBBuscar.Name = "tBBuscar";
             this.tBBuscar.Size = new System.Drawing.Size(194, 26);
             this.tBBuscar.TabIndex = 2;
+            this.tBBuscar.TextChanged += new System.EventHandler(this.tBBuscar_TextChanged);
             // 
             // label51
             // 
@@ -1589,211 +1764,83 @@
             this.label51.TabIndex = 1;
             this.label51.Text = "Buscar";
             // 
-            // dataGridView1
+            // dGVMostrarProdVtas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1016, 69);
-            this.dataGridView1.TabIndex = 0;
+            this.dGVMostrarProdVtas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVMostrarProdVtas.Location = new System.Drawing.Point(6, 58);
+            this.dGVMostrarProdVtas.Name = "dGVMostrarProdVtas";
+            this.dGVMostrarProdVtas.RowHeadersWidth = 62;
+            this.dGVMostrarProdVtas.RowTemplate.Height = 28;
+            this.dGVMostrarProdVtas.Size = new System.Drawing.Size(1178, 173);
+            this.dGVMostrarProdVtas.TabIndex = 0;
+            this.dGVMostrarProdVtas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVMostrarProdVtas_MouseClick);
             // 
-            // Column1
+            // tBCantidad
             // 
-            this.Column1.HeaderText = "Código";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
+            this.tBCantidad.Location = new System.Drawing.Point(429, 254);
+            this.tBCantidad.Name = "tBCantidad";
+            this.tBCantidad.Size = new System.Drawing.Size(194, 26);
+            this.tBCantidad.TabIndex = 12;
             // 
-            // Column2
+            // label61
             // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(334, 257);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(77, 20);
+            this.label61.TabIndex = 11;
+            this.label61.Text = "Cantidad:";
             // 
-            // Column3
+            // nombre
             // 
-            this.Column3.HeaderText = "Marca";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 8;
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 150;
             // 
-            // Column4
+            // marca
             // 
-            this.Column4.HeaderText = "Peso";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
+            this.marca.HeaderText = "marca";
+            this.marca.MinimumWidth = 8;
+            this.marca.Name = "marca";
+            this.marca.Width = 150;
             // 
-            // Column5
+            // codigo
             // 
-            this.Column5.HeaderText = "Precio";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.codigo.HeaderText = "codigo";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 150;
             // 
-            // Column6
+            // cantidad
             // 
-            this.Column6.HeaderText = "Cant. disp-";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
+            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.MinimumWidth = 8;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 150;
             // 
-            // dGVFacturas
+            // precio
             // 
-            this.dGVFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVFacturas.Location = new System.Drawing.Point(401, 16);
-            this.dGVFacturas.Name = "dGVFacturas";
-            this.dGVFacturas.RowHeadersWidth = 62;
-            this.dGVFacturas.RowTemplate.Height = 28;
-            this.dGVFacturas.Size = new System.Drawing.Size(745, 307);
-            this.dGVFacturas.TabIndex = 29;
-            this.dGVFacturas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVFacturas_MouseClick);
+            this.precio.HeaderText = "precio";
+            this.precio.MinimumWidth = 8;
+            this.precio.Name = "precio";
+            this.precio.Width = 150;
             // 
-            // tBBuscarFact
+            // label62
             // 
-            this.tBBuscarFact.Location = new System.Drawing.Point(100, 353);
-            this.tBBuscarFact.Name = "tBBuscarFact";
-            this.tBBuscarFact.Size = new System.Drawing.Size(416, 26);
-            this.tBBuscarFact.TabIndex = 47;
-            this.tBBuscarFact.TextChanged += new System.EventHandler(this.tBBuscarFact_TextChanged);
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(3, 36);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(48, 20);
+            this.label62.TabIndex = 11;
+            this.label62.Text = "Total:";
             // 
-            // label57
+            // tBTotalVta
             // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(29, 353);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(65, 20);
-            this.label57.TabIndex = 46;
-            this.label57.Text = "Buscar";
-            // 
-            // btnElimFact
-            // 
-            this.btnElimFact.Location = new System.Drawing.Point(291, 396);
-            this.btnElimFact.Name = "btnElimFact";
-            this.btnElimFact.Size = new System.Drawing.Size(225, 36);
-            this.btnElimFact.TabIndex = 45;
-            this.btnElimFact.Text = "ELIMINAR";
-            this.btnElimFact.UseVisualStyleBackColor = true;
-            this.btnElimFact.Click += new System.EventHandler(this.btnElimFact_Click);
-            // 
-            // btnEditarFact
-            // 
-            this.btnEditarFact.Location = new System.Drawing.Point(28, 396);
-            this.btnEditarFact.Name = "btnEditarFact";
-            this.btnEditarFact.Size = new System.Drawing.Size(225, 36);
-            this.btnEditarFact.TabIndex = 44;
-            this.btnEditarFact.Text = "EDITAR";
-            this.btnEditarFact.UseVisualStyleBackColor = true;
-            this.btnEditarFact.Click += new System.EventHandler(this.btnEditarFact_Click);
-            // 
-            // dGVProveedores
-            // 
-            this.dGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVProveedores.Location = new System.Drawing.Point(390, 46);
-            this.dGVProveedores.Name = "dGVProveedores";
-            this.dGVProveedores.RowHeadersWidth = 62;
-            this.dGVProveedores.RowTemplate.Height = 28;
-            this.dGVProveedores.Size = new System.Drawing.Size(764, 321);
-            this.dGVProveedores.TabIndex = 41;
-            this.dGVProveedores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVProveedores_MouseClick);
-            // 
-            // tBBuscarProv
-            // 
-            this.tBBuscarProv.Location = new System.Drawing.Point(110, 411);
-            this.tBBuscarProv.Name = "tBBuscarProv";
-            this.tBBuscarProv.Size = new System.Drawing.Size(416, 26);
-            this.tBBuscarProv.TabIndex = 51;
-            this.tBBuscarProv.TextChanged += new System.EventHandler(this.tBBuscarProv_TextChanged);
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(39, 411);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(65, 20);
-            this.label58.TabIndex = 50;
-            this.label58.Text = "Buscar";
-            // 
-            // btnElimProv
-            // 
-            this.btnElimProv.Location = new System.Drawing.Point(301, 454);
-            this.btnElimProv.Name = "btnElimProv";
-            this.btnElimProv.Size = new System.Drawing.Size(225, 36);
-            this.btnElimProv.TabIndex = 49;
-            this.btnElimProv.Text = "ELIMINAR";
-            this.btnElimProv.UseVisualStyleBackColor = true;
-            this.btnElimProv.Click += new System.EventHandler(this.btnElimProv_Click);
-            // 
-            // btnEditProv
-            // 
-            this.btnEditProv.Location = new System.Drawing.Point(38, 454);
-            this.btnEditProv.Name = "btnEditProv";
-            this.btnEditProv.Size = new System.Drawing.Size(225, 36);
-            this.btnEditProv.TabIndex = 48;
-            this.btnEditProv.Text = "EDITAR";
-            this.btnEditProv.UseVisualStyleBackColor = true;
-            this.btnEditProv.Click += new System.EventHandler(this.btnEditProv_Click);
-            // 
-            // dGVDetallesFact
-            // 
-            this.dGVDetallesFact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVDetallesFact.Location = new System.Drawing.Point(466, 28);
-            this.dGVDetallesFact.Name = "dGVDetallesFact";
-            this.dGVDetallesFact.RowHeadersWidth = 62;
-            this.dGVDetallesFact.RowTemplate.Height = 28;
-            this.dGVDetallesFact.Size = new System.Drawing.Size(699, 370);
-            this.dGVDetallesFact.TabIndex = 48;
-            this.dGVDetallesFact.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVDetallesFact_MouseClick);
-            // 
-            // tBBuscarDetallFcat
-            // 
-            this.tBBuscarDetallFcat.Location = new System.Drawing.Point(106, 424);
-            this.tBBuscarDetallFcat.Name = "tBBuscarDetallFcat";
-            this.tBBuscarDetallFcat.Size = new System.Drawing.Size(416, 26);
-            this.tBBuscarDetallFcat.TabIndex = 55;
-            this.tBBuscarDetallFcat.TextChanged += new System.EventHandler(this.tBBuscarDetallFcat_TextChanged);
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(35, 424);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(65, 20);
-            this.label59.TabIndex = 54;
-            this.label59.Text = "Buscar";
-            // 
-            // btnElimDetallFact
-            // 
-            this.btnElimDetallFact.Location = new System.Drawing.Point(297, 467);
-            this.btnElimDetallFact.Name = "btnElimDetallFact";
-            this.btnElimDetallFact.Size = new System.Drawing.Size(225, 36);
-            this.btnElimDetallFact.TabIndex = 53;
-            this.btnElimDetallFact.Text = "ELIMINAR";
-            this.btnElimDetallFact.UseVisualStyleBackColor = true;
-            this.btnElimDetallFact.Click += new System.EventHandler(this.btnElimDetallFact_Click);
-            // 
-            // btnEditDetallFact
-            // 
-            this.btnEditDetallFact.Location = new System.Drawing.Point(34, 467);
-            this.btnEditDetallFact.Name = "btnEditDetallFact";
-            this.btnEditDetallFact.Size = new System.Drawing.Size(225, 36);
-            this.btnEditDetallFact.TabIndex = 52;
-            this.btnEditDetallFact.Text = "EDITAR";
-            this.btnEditDetallFact.UseVisualStyleBackColor = true;
-            this.btnEditDetallFact.Click += new System.EventHandler(this.btnEditDetallFact_Click);
+            this.tBTotalVta.Location = new System.Drawing.Point(57, 36);
+            this.tBTotalVta.Name = "tBTotalVta";
+            this.tBTotalVta.Size = new System.Drawing.Size(138, 26);
+            this.tBTotalVta.TabIndex = 12;
             // 
             // Form1
             // 
@@ -1802,7 +1849,7 @@
             this.ClientSize = new System.Drawing.Size(1202, 627);
             this.Controls.Add(this.tabCtrlSupermercado);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Supermercado";
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).EndInit();
@@ -1816,17 +1863,19 @@
             this.tabCtrlSupermercado.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVFacturas)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProveedores)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVFacturas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVCesta)).EndInit();
+            this.panDetallVta.ResumeLayout(false);
+            this.panDetallVta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1946,22 +1995,15 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.ComboBox cBMedioPagDF;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox cBFact;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dGVMostrarProdVtas;
+        private System.Windows.Forms.Panel panDetallVta;
         private System.Windows.Forms.TextBox tBBuscar;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Button btnAgregarProd;
         private System.Windows.Forms.ComboBox cBVendedor;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridView dGVCesta;
         private System.Windows.Forms.TextBox tBBuscarEmp;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.DataGridView dGVEmpleados;
@@ -1993,6 +2035,17 @@
         private System.Windows.Forms.Button btnElimDetallFact;
         private System.Windows.Forms.Button btnEditDetallFact;
         private System.Windows.Forms.DataGridView dGVDetallesFact;
+        private System.Windows.Forms.Button btnCerrarVenta;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox tBCantidad;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.TextBox tBTotalVta;
+        private System.Windows.Forms.Label label62;
     }
 }
 
