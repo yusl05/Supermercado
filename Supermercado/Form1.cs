@@ -419,7 +419,7 @@ namespace Supermercado
             tBIdProvProd.Text = ds.Tables[0].Rows[0]["id_proveedor"].ToString();
             tBCodProd.Text = ds.Tables[0].Rows[0]["codigo"].ToString();
             tBImagProd.Text = ds.Tables[0].Rows[0]["imagen"].ToString();
-            MostrarImagenDesdeURL(tBImagProd.Text);
+            MostrarImagenDesdeURL(tBImagProd.Text, pBProd);
             tBNombreProd.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
             tBMarcaProd.Text = ds.Tables[0].Rows[0]["marca"].ToString();
             tBTipoProd.Text = ds.Tables[0].Rows[0]["tipo"].ToString();
@@ -429,7 +429,7 @@ namespace Supermercado
             tBStockProd.Text = ds.Tables[0].Rows[0]["stock"].ToString();
         }
 
-        private void MostrarImagenDesdeURL(string imageUrl)
+        private void MostrarImagenDesdeURL(string imageUrl, PictureBox pB)
         {
             try
             {
@@ -443,7 +443,7 @@ namespace Supermercado
                         {
                             magickImage.Write(ms, MagickFormat.Png);
                             ms.Position = 0;
-                            pBProd.Image = System.Drawing.Image.FromStream(ms);
+                            pB.Image = System.Drawing.Image.FromStream(ms);
                         }
                     }
                 }
@@ -771,13 +771,21 @@ namespace Supermercado
 
         private void btnCerrarVenta_Click(object sender, EventArgs e)
         {
-            if (!tBNumFactVta.Text.Equals("")  && !tBCodFcatVta.Text.Equals(""))
-            {
-                bool resultadoFactura;
+                string n;
+                if (dGVFacturas.Rows[dGVFacturas.RowCount - 2].Cells[0] != null)
+                {
+                    n = int.Parse(dGVFacturas.Rows[dGVFacturas.RowCount - 2].Cells[0].Value.ToString()).ToString();
+                } else
+                {
+                    n = "1";
+                }
+
+                    bool resultadoFactura;
                 Datos data = new Datos();
                 string queryFactura = "INSERT INTO facturas(numero,codigo,fecha," +
                     "hora,importe_total)" +
-                    "Values('" + tBNumFactVta.Text + "','" + tBCodFcatVta.Text + "','" +
+                    //"Values('" + tBNumFactVta.Text + "','" + tBCodFcatVta.Text + "','" +
+                    "Values('" + n+n+n + "','" + "A"+n+"B"+n+"LL"+n + "','" +
                     DateTime.Today.ToString("yyyy-MM-dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "','" +
                     tBTotalVta.Text + "')";
                 resultadoFactura = data.ExecuteQuery(queryFactura);
@@ -847,10 +855,6 @@ namespace Supermercado
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 mostrarComprasClie();
-            } else
-            {
-                MessageBox.Show("Ingrese los datos de la venta antes de cerrarla");
-            }
 
         }
 
@@ -931,13 +935,18 @@ namespace Supermercado
             String id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
             DataSet ds = datos.getAllData("SELECT * FROM facturas_detalles WHERE id=" + id);
 
+            MostrarImagenDesdeURL(dGVMostrarProdVtas.Rows[dGVMostrarProdVtas.CurrentCell.RowIndex].Cells[3].Value.ToString(), pBMostrarProdVta);
+            pBMostrarProdVta.SizeMode = PictureBoxSizeMode.StretchImage;    
+
             if (ds.Tables[0].Rows.Count > 0)
             {
                 DataRow fila = ds.Tables[0].Rows[0];
 
                 int i = dGVCesta.Rows.Add();
+                
             }
         }
+
 
         private void mostrarVentas()
         {
