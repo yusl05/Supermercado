@@ -23,11 +23,15 @@ namespace Supermercado
             InitializeComponent();
             tBTotalVta.Text = "0";
             mostrarEmpleados();
+            mostrarVentas();
             mostrarClientes();
             mostrarProductos();
             mostrarFacturas();
             mostrarProveedores();
-            mostrarFacturasDetalles(); 
+            mostrarFacturasDetalles();
+            iniciarComboBoxs();
+            mostrarVtasProductos();
+            mostrarComprasClie();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -235,7 +239,7 @@ namespace Supermercado
                     "',tipo_doc='" + tBTipoDocEmp.Text + "',nro_doc='" + tBNumDocEmp.Text +
                     "',cuil='" + tBCuilEmp.Text + "',direccion='" + tBDireEmp.Text +
                     "',nro_tel_princ='" + tBTel1Emp.Text + "',nro_tel_sec='" + tBTel2Emp.Text +
-                    "',email='" + tBEmailEmp.Text + "',cargo='" + tBAntiguEmp.Text +
+                    "',email='" + tBEmailEmp.Text + "',cargo='" + tBCargoEmp.Text +
                     "',antiguedad='" + tBAntiguEmp.Text + "',fecha_ingreso='" + 
                     dTPFechaIngEmp.Value.ToString("yyyy-MM-dd") + "',salario_anual='" + tBSalaAnuEmp.Text +
                     "'WHERE id = " + id;
@@ -767,6 +771,86 @@ namespace Supermercado
 
         private void btnCerrarVenta_Click(object sender, EventArgs e)
         {
+            if (!tBNumFactVta.Text.Equals("")  && !tBCodFcatVta.Text.Equals(""))
+            {
+                bool resultadoFactura;
+                Datos data = new Datos();
+                string queryFactura = "INSERT INTO facturas(numero,codigo,fecha," +
+                    "hora,importe_total)" +
+                    "Values('" + tBNumFactVta.Text + "','" + tBCodFcatVta.Text + "','" +
+                    DateTime.Today.ToString("yyyy-MM-dd") + "','" + DateTime.Now.ToString("HH:mm:ss") + "','" +
+                    tBTotalVta.Text + "')";
+                resultadoFactura = data.ExecuteQuery(queryFactura);
+                if (resultadoFactura)
+                {
+                    MessageBox.Show("Factura agregada", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar factura", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                mostrarFacturas();
+
+                bool resultadoVenta;
+                string queryVenta = "INSERT INTO ventas(id_empleado, id_factura)" +
+                    "Values('" + int.Parse(cBVendedor.SelectedItem.ToString()) + "','" + 
+                    int.Parse(dGVFacturas.Rows[dGVFacturas.RowCount - 2].Cells[0].Value.ToString()) +"')";
+                resultadoVenta = data.ExecuteQuery(queryVenta);
+                if (resultadoVenta)
+                {
+                    MessageBox.Show("Venta agregada", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar el venta", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                mostrarVentas();
+
+                for (int i = 0; i < dGVCesta.Rows.Count-1; i++)
+                {
+                    bool resultadoVtaProd;
+                    string queryVtaProd = "INSERT INTO ventas_productos(id_venta, id_producto, cantidad)" +
+                        "Values('" + int.Parse(dGVVentas.Rows[dGVVentas.RowCount - 2].Cells[0].Value.ToString()) + "','" +
+                        int.Parse(dGVCesta.Rows[i].Cells[0].Value.ToString()) + "','" 
+                        + int.Parse(dGVCesta.Rows[i].Cells[4].Value.ToString()) + "')";
+                    resultadoVtaProd = data.ExecuteQuery(queryVtaProd);
+                    if (resultadoVtaProd)
+                    {
+                        MessageBox.Show("Vta_prod agregada", "Sistema",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar vta_prod", "Sistema",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                mostrarVtasProductos();
+
+                bool resultadoVtaClie;
+                string queryVtaClie = "INSERT INTO compras_clientes(id_venta, id_cliente)" +
+                    "Values('" + int.Parse(dGVVentas.Rows[dGVVentas.RowCount - 2].Cells[0].Value.ToString()) 
+                    + "','" + int.Parse(cBClientes.SelectedItem.ToString()) + "')";
+                resultadoVtaClie = data.ExecuteQuery(queryVtaClie);
+                if (resultadoVtaClie)
+                {
+                    MessageBox.Show("Compra_clie agregada", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar compra_clie", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                mostrarComprasClie();
+            } else
+            {
+                MessageBox.Show("Ingrese los datos de la venta antes de cerrarla");
+            }
 
         }
 
@@ -775,13 +859,11 @@ namespace Supermercado
 
             if (!int.TryParse(tBCantidad.Text, out int cantidad) || cantidad <= 0)
             {
-                MessageBox.Show("Por favor ingresa una cantidad válida.");
+                MessageBox.Show("Cantidad no válida.");
                 return;
             }
             string id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
-            DataSet ds = datos.getAllData("SELECT nombre, marca, codigo, precio_unidad FROM productos WHERE id=" + id);
-
-
+            DataSet ds = datos.getAllData("SELECT id, nombre, marca, codigo, precio_unidad FROM productos WHERE id=" + id);
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -792,7 +874,7 @@ namespace Supermercado
                 decimal subtotal = precio * cantidad;
 
                 // Agregar al carrito
-                dGVCesta.Rows.Add(fila["nombre"].ToString(),fila["marca"].ToString(),
+                dGVCesta.Rows.Add(fila["id"], fila["nombre"].ToString(),fila["marca"].ToString(),
                 fila["codigo"].ToString(),cantidad,precio.ToString("0.00"));
 
                 tBTotalVta.Text = (Convert.ToDecimal(tBTotalVta.Text) + subtotal).ToString("0.00"); 
@@ -820,6 +902,30 @@ namespace Supermercado
             }
         }
 
+        private void iniciarComboBoxs()
+        {
+            for (int i = 0; i < dGVEmpleados.Rows.Count-1; i++)
+            {
+                if (dGVEmpleados.Rows[i].Cells[12].Value.ToString().Equals("Vendedor"))
+                {
+                    cBVendedor.Items.Add(dGVEmpleados.Rows[i].Cells[0].Value.ToString());
+                }
+            }
+            if (cBVendedor.Items.Count > 0)
+            {
+                cBVendedor.SelectedIndex = 0;
+            }
+
+            for (int i = 0; i < dGVClientes.Rows.Count - 1; i++)
+            {
+                cBClientes.Items.Add(dGVClientes.Rows[i].Cells[0].Value.ToString());
+            }
+            if (cBVendedor != null)
+            {
+                cBClientes.SelectedIndex = 0;
+            }
+        }
+
         private void dGVMostrarProdVtas_MouseClick(object sender, MouseEventArgs e)
         {
             String id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
@@ -829,8 +935,49 @@ namespace Supermercado
             {
                 DataRow fila = ds.Tables[0].Rows[0];
 
-                // Crear una nueva fila para el carrito
                 int i = dGVCesta.Rows.Add();
+            }
+        }
+
+        private void mostrarVentas()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM ventas Order By id");
+            if (ds != null)
+            {
+                dGVVentas.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void mostrarComprasClie()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM compras_clientes Order By id");
+            if (ds != null)
+            {
+                dGVComprasClie.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void mostrarVtasProductos()
+        {
+            DataSet ds = datos.getAllData("SELECT * FROM ventas_productos Order By id");
+            if (ds != null)
+            {
+                dGVVentasProd.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los datos.", "Sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

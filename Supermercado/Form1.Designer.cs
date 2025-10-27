@@ -173,26 +173,39 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tBCantidad = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.btnCerrarVenta = new System.Windows.Forms.Button();
             this.label53 = new System.Windows.Forms.Label();
+            this.tBTotalVta = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.dGVCesta = new System.Windows.Forms.DataGridView();
             this.label52 = new System.Windows.Forms.Label();
             this.btnAgregarProd = new System.Windows.Forms.Button();
             this.cBVendedor = new System.Windows.Forms.ComboBox();
             this.panDetallVta = new System.Windows.Forms.Panel();
+            this.tBCodFcatVta = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.tBNumFactVta = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.tBBuscar = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.dGVMostrarProdVtas = new System.Windows.Forms.DataGridView();
-            this.tBCantidad = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dGVVentas = new System.Windows.Forms.DataGridView();
+            this.label65 = new System.Windows.Forms.Label();
+            this.cBClientes = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label62 = new System.Windows.Forms.Label();
-            this.tBTotalVta = new System.Windows.Forms.TextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dGVVentasProd = new System.Windows.Forms.DataGridView();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dGVComprasClie = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
@@ -211,6 +224,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVCesta)).BeginInit();
             this.panDetallVta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVVentas)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVVentasProd)).BeginInit();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVComprasClie)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -1065,6 +1084,9 @@
             this.tabCtrlSupermercado.Controls.Add(this.tabPage5);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage6);
             this.tabCtrlSupermercado.Controls.Add(this.tabPage7);
+            this.tabCtrlSupermercado.Controls.Add(this.tabPage8);
+            this.tabCtrlSupermercado.Controls.Add(this.tabPage9);
+            this.tabCtrlSupermercado.Controls.Add(this.tabPage10);
             this.tabCtrlSupermercado.Location = new System.Drawing.Point(1, 2);
             this.tabCtrlSupermercado.Name = "tabCtrlSupermercado";
             this.tabCtrlSupermercado.SelectedIndex = 0;
@@ -1645,10 +1667,14 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.label65);
+            this.tabPage7.Controls.Add(this.cBClientes);
             this.tabPage7.Controls.Add(this.tBCantidad);
             this.tabPage7.Controls.Add(this.label61);
             this.tabPage7.Controls.Add(this.btnCerrarVenta);
             this.tabPage7.Controls.Add(this.label53);
+            this.tabPage7.Controls.Add(this.tBTotalVta);
+            this.tabPage7.Controls.Add(this.label62);
             this.tabPage7.Controls.Add(this.dGVCesta);
             this.tabPage7.Controls.Add(this.label52);
             this.tabPage7.Controls.Add(this.btnAgregarProd);
@@ -1664,6 +1690,22 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Venta";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tBCantidad
+            // 
+            this.tBCantidad.Location = new System.Drawing.Point(429, 254);
+            this.tBCantidad.Name = "tBCantidad";
+            this.tBCantidad.Size = new System.Drawing.Size(194, 26);
+            this.tBCantidad.TabIndex = 12;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(334, 257);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(77, 20);
+            this.label61.TabIndex = 11;
+            this.label61.Text = "Cantidad:";
             // 
             // btnCerrarVenta
             // 
@@ -1684,10 +1726,27 @@
             this.label53.TabIndex = 9;
             this.label53.Text = "Cesta:";
             // 
+            // tBTotalVta
+            // 
+            this.tBTotalVta.Location = new System.Drawing.Point(74, 551);
+            this.tBTotalVta.Name = "tBTotalVta";
+            this.tBTotalVta.Size = new System.Drawing.Size(138, 26);
+            this.tBTotalVta.TabIndex = 12;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(20, 551);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(48, 20);
+            this.label62.TabIndex = 11;
+            this.label62.Text = "Total:";
+            // 
             // dGVCesta
             // 
             this.dGVCesta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVCesta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.nombre,
             this.marca,
             this.codigo,
@@ -1730,13 +1789,47 @@
             // panDetallVta
             // 
             this.panDetallVta.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panDetallVta.Controls.Add(this.tBTotalVta);
-            this.panDetallVta.Controls.Add(this.label62);
+            this.panDetallVta.Controls.Add(this.tBCodFcatVta);
+            this.panDetallVta.Controls.Add(this.label64);
+            this.panDetallVta.Controls.Add(this.tBNumFactVta);
+            this.panDetallVta.Controls.Add(this.label63);
             this.panDetallVta.Controls.Add(this.label60);
             this.panDetallVta.Location = new System.Drawing.Point(648, 257);
             this.panDetallVta.Name = "panDetallVta";
             this.panDetallVta.Size = new System.Drawing.Size(544, 327);
             this.panDetallVta.TabIndex = 3;
+            // 
+            // tBCodFcatVta
+            // 
+            this.tBCodFcatVta.Location = new System.Drawing.Point(80, 71);
+            this.tBCodFcatVta.Name = "tBCodFcatVta";
+            this.tBCodFcatVta.Size = new System.Drawing.Size(194, 26);
+            this.tBCodFcatVta.TabIndex = 16;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(11, 74);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(63, 20);
+            this.label64.TabIndex = 15;
+            this.label64.Text = "Código:";
+            // 
+            // tBNumFactVta
+            // 
+            this.tBNumFactVta.Location = new System.Drawing.Point(80, 30);
+            this.tBNumFactVta.Name = "tBNumFactVta";
+            this.tBNumFactVta.Size = new System.Drawing.Size(194, 26);
+            this.tBNumFactVta.TabIndex = 14;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(11, 33);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(69, 20);
+            this.label63.TabIndex = 13;
+            this.label63.Text = "Número:";
             // 
             // label60
             // 
@@ -1775,21 +1868,50 @@
             this.dGVMostrarProdVtas.TabIndex = 0;
             this.dGVMostrarProdVtas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVMostrarProdVtas_MouseClick);
             // 
-            // tBCantidad
+            // tabPage8
             // 
-            this.tBCantidad.Location = new System.Drawing.Point(429, 254);
-            this.tBCantidad.Name = "tBCantidad";
-            this.tBCantidad.Size = new System.Drawing.Size(194, 26);
-            this.tBCantidad.TabIndex = 12;
+            this.tabPage8.Controls.Add(this.dGVVentas);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1198, 592);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Ventas";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // label61
+            // dGVVentas
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(334, 257);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(77, 20);
-            this.label61.TabIndex = 11;
-            this.label61.Text = "Cantidad:";
+            this.dGVVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVVentas.Location = new System.Drawing.Point(36, 31);
+            this.dGVVentas.Name = "dGVVentas";
+            this.dGVVentas.RowHeadersWidth = 62;
+            this.dGVVentas.RowTemplate.Height = 28;
+            this.dGVVentas.Size = new System.Drawing.Size(1115, 361);
+            this.dGVVentas.TabIndex = 48;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(756, 9);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(80, 20);
+            this.label65.TabIndex = 14;
+            this.label65.Text = "ID cliente:";
+            // 
+            // cBClientes
+            // 
+            this.cBClientes.FormattingEnabled = true;
+            this.cBClientes.Location = new System.Drawing.Point(862, 6);
+            this.cBClientes.Name = "cBClientes";
+            this.cBClientes.Size = new System.Drawing.Size(92, 28);
+            this.cBClientes.TabIndex = 13;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.Width = 150;
             // 
             // nombre
             // 
@@ -1826,21 +1948,47 @@
             this.precio.Name = "precio";
             this.precio.Width = 150;
             // 
-            // label62
+            // tabPage9
             // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(3, 36);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(48, 20);
-            this.label62.TabIndex = 11;
-            this.label62.Text = "Total:";
+            this.tabPage9.Controls.Add(this.dGVVentasProd);
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1198, 592);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Ventas productos";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // tBTotalVta
+            // dGVVentasProd
             // 
-            this.tBTotalVta.Location = new System.Drawing.Point(57, 36);
-            this.tBTotalVta.Name = "tBTotalVta";
-            this.tBTotalVta.Size = new System.Drawing.Size(138, 26);
-            this.tBTotalVta.TabIndex = 12;
+            this.dGVVentasProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVVentasProd.Location = new System.Drawing.Point(36, 40);
+            this.dGVVentasProd.Name = "dGVVentasProd";
+            this.dGVVentasProd.RowHeadersWidth = 62;
+            this.dGVVentasProd.RowTemplate.Height = 28;
+            this.dGVVentasProd.Size = new System.Drawing.Size(1119, 370);
+            this.dGVVentasProd.TabIndex = 49;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.dGVComprasClie);
+            this.tabPage10.Location = new System.Drawing.Point(4, 29);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1198, 592);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Compras clientes";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // dGVComprasClie
+            // 
+            this.dGVComprasClie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVComprasClie.Location = new System.Drawing.Point(42, 45);
+            this.dGVComprasClie.Name = "dGVComprasClie";
+            this.dGVComprasClie.RowHeadersWidth = 62;
+            this.dGVComprasClie.RowTemplate.Height = 28;
+            this.dGVComprasClie.Size = new System.Drawing.Size(1119, 370);
+            this.dGVComprasClie.TabIndex = 50;
             // 
             // Form1
             // 
@@ -1876,6 +2024,12 @@
             this.panDetallVta.ResumeLayout(false);
             this.panDetallVta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGVVentas)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGVVentasProd)).EndInit();
+            this.tabPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGVComprasClie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2039,13 +2193,26 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox tBCantidad;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox tBTotalVta;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox tBCodFcatVta;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox tBNumFactVta;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.DataGridView dGVVentas;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.ComboBox cBClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.TextBox tBTotalVta;
-        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.DataGridView dGVVentasProd;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.DataGridView dGVComprasClie;
     }
 }
 
