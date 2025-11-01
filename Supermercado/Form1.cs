@@ -855,7 +855,6 @@ namespace Supermercado
                 }
                 mostrarComprasClie();
 
-            //Actualizar stock
             for (int i = 0; i < dGVCesta.Rows.Count-1; i++)
             {
                 if (!dGVCesta.Rows[i].IsNewRow)
