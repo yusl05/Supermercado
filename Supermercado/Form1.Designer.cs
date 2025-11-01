@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pBProd = new System.Windows.Forms.PictureBox();
             this.tBBuscarProd = new System.Windows.Forms.TextBox();
@@ -173,6 +174,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.pBMostrarProdVta = new System.Windows.Forms.PictureBox();
             this.label65 = new System.Windows.Forms.Label();
             this.cBClientes = new System.Windows.Forms.ComboBox();
             this.tBCantidad = new System.Windows.Forms.TextBox();
@@ -182,12 +184,6 @@
             this.tBTotalVta = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
             this.dGVCesta = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label52 = new System.Windows.Forms.Label();
             this.btnAgregarProd = new System.Windows.Forms.Button();
             this.cBVendedor = new System.Windows.Forms.ComboBox();
@@ -200,7 +196,13 @@
             this.dGVVentasProd = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dGVComprasClie = new System.Windows.Forms.DataGridView();
-            this.pBMostrarProdVta = new System.Windows.Forms.PictureBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
@@ -216,6 +218,7 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBMostrarProdVta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCesta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -224,7 +227,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVVentasProd)).BeginInit();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVComprasClie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBMostrarProdVta)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -1686,10 +1688,19 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Venta";
             // 
+            // pBMostrarProdVta
+            // 
+            this.pBMostrarProdVta.BackColor = System.Drawing.Color.Gray;
+            this.pBMostrarProdVta.Location = new System.Drawing.Point(990, 328);
+            this.pBMostrarProdVta.Name = "pBMostrarProdVta";
+            this.pBMostrarProdVta.Size = new System.Drawing.Size(194, 199);
+            this.pBMostrarProdVta.TabIndex = 15;
+            this.pBMostrarProdVta.TabStop = false;
+            // 
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(992, 336);
+            this.label65.Location = new System.Drawing.Point(740, 22);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(80, 20);
             this.label65.TabIndex = 14;
@@ -1699,7 +1710,7 @@
             // 
             this.cBClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cBClientes.FormattingEnabled = true;
-            this.cBClientes.Location = new System.Drawing.Point(1092, 328);
+            this.cBClientes.Location = new System.Drawing.Point(840, 14);
             this.cBClientes.Name = "cBClientes";
             this.cBClientes.Size = new System.Drawing.Size(92, 28);
             this.cBClientes.TabIndex = 13;
@@ -1741,7 +1752,7 @@
             // 
             // tBTotalVta
             // 
-            this.tBTotalVta.Location = new System.Drawing.Point(1046, 542);
+            this.tBTotalVta.Location = new System.Drawing.Point(837, 540);
             this.tBTotalVta.Name = "tBTotalVta";
             this.tBTotalVta.Size = new System.Drawing.Size(138, 26);
             this.tBTotalVta.TabIndex = 12;
@@ -1749,7 +1760,7 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(992, 542);
+            this.label62.Location = new System.Drawing.Point(783, 540);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(48, 20);
             this.label62.TabIndex = 11;
@@ -1764,7 +1775,8 @@
             this.marca,
             this.codigo,
             this.cantidad,
-            this.precio});
+            this.precio,
+            this.stock});
             this.dGVCesta.Location = new System.Drawing.Point(7, 328);
             this.dGVCesta.Name = "dGVCesta";
             this.dGVCesta.RowHeadersWidth = 62;
@@ -1772,52 +1784,10 @@
             this.dGVCesta.Size = new System.Drawing.Size(968, 199);
             this.dGVCesta.TabIndex = 8;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.Width = 150;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 8;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 150;
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "marca";
-            this.marca.MinimumWidth = 8;
-            this.marca.Name = "marca";
-            this.marca.Width = 150;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "codigo";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.Width = 150;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "cantidad";
-            this.cantidad.MinimumWidth = 8;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 150;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "precio";
-            this.precio.MinimumWidth = 8;
-            this.precio.Name = "precio";
-            this.precio.Width = 150;
-            // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(981, 387);
+            this.label52.Location = new System.Drawing.Point(981, 17);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(100, 20);
             this.label52.TabIndex = 7;
@@ -1825,7 +1795,7 @@
             // 
             // btnAgregarProd
             // 
-            this.btnAgregarProd.Location = new System.Drawing.Point(648, 254);
+            this.btnAgregarProd.Location = new System.Drawing.Point(330, 254);
             this.btnAgregarProd.Name = "btnAgregarProd";
             this.btnAgregarProd.Size = new System.Drawing.Size(306, 44);
             this.btnAgregarProd.TabIndex = 6;
@@ -1837,7 +1807,7 @@
             // 
             this.cBVendedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cBVendedor.FormattingEnabled = true;
-            this.cBVendedor.Location = new System.Drawing.Point(1092, 384);
+            this.cBVendedor.Location = new System.Drawing.Point(1092, 14);
             this.cBVendedor.Name = "cBVendedor";
             this.cBVendedor.Size = new System.Drawing.Size(92, 28);
             this.cBVendedor.TabIndex = 5;
@@ -1866,7 +1836,7 @@
             this.dGVMostrarProdVtas.Name = "dGVMostrarProdVtas";
             this.dGVMostrarProdVtas.RowHeadersWidth = 62;
             this.dGVMostrarProdVtas.RowTemplate.Height = 28;
-            this.dGVMostrarProdVtas.Size = new System.Drawing.Size(948, 173);
+            this.dGVMostrarProdVtas.Size = new System.Drawing.Size(1178, 173);
             this.dGVMostrarProdVtas.TabIndex = 0;
             this.dGVMostrarProdVtas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dGVMostrarProdVtas_MouseClick);
             // 
@@ -1933,13 +1903,54 @@
             this.dGVComprasClie.Size = new System.Drawing.Size(1119, 370);
             this.dGVComprasClie.TabIndex = 50;
             // 
-            // pBMostrarProdVta
+            // ID
             // 
-            this.pBMostrarProdVta.Location = new System.Drawing.Point(990, 58);
-            this.pBMostrarProdVta.Name = "pBMostrarProdVta";
-            this.pBMostrarProdVta.Size = new System.Drawing.Size(194, 173);
-            this.pBMostrarProdVta.TabIndex = 15;
-            this.pBMostrarProdVta.TabStop = false;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 8;
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 150;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "marca";
+            this.marca.MinimumWidth = 8;
+            this.marca.Name = "marca";
+            this.marca.Width = 150;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "codigo";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 150;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.MinimumWidth = 8;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 150;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "precio";
+            this.precio.MinimumWidth = 8;
+            this.precio.Name = "precio";
+            this.precio.Width = 150;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "stock";
+            this.stock.MinimumWidth = 8;
+            this.stock.Name = "stock";
+            this.stock.Width = 150;
             // 
             // Form1
             // 
@@ -1947,6 +1958,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 627);
             this.Controls.Add(this.tabCtrlSupermercado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Supermercado";
             this.tabPage3.ResumeLayout(false);
@@ -1971,6 +1983,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVDetallesFact)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBMostrarProdVta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCesta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVMostrarProdVtas)).EndInit();
             this.tabPage8.ResumeLayout(false);
@@ -1979,7 +1992,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVVentasProd)).EndInit();
             this.tabPage10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVComprasClie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBMostrarProdVta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2147,17 +2159,18 @@
         private System.Windows.Forms.DataGridView dGVVentas;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.ComboBox cBClientes;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.DataGridView dGVVentasProd;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.DataGridView dGVComprasClie;
+        private System.Windows.Forms.PictureBox pBMostrarProdVta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.DataGridView dGVVentasProd;
-        private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.DataGridView dGVComprasClie;
-        private System.Windows.Forms.PictureBox pBMostrarProdVta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
     }
 }
 

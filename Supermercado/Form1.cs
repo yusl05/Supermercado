@@ -856,6 +856,36 @@ namespace Supermercado
                 }
                 mostrarComprasClie();
 
+            //Actualizar stock
+            for (int i = 0; i < dGVCesta.Rows.Count-1; i++)
+            {
+                if (!dGVCesta.Rows[i].IsNewRow)
+                {
+                    int stockActual = int.Parse(dGVCesta[6, i].Value.ToString());
+                    int cantidadVendida = int.Parse(dGVCesta[4, i].Value.ToString());
+                    int nuevoStock = stockActual - cantidadVendida;
+                    bool resultado;
+                    String idProd = dGVCesta[0, i].Value.ToString();
+                    string query = "UPDATE productos SET stock =" + nuevoStock + " WHERE id =" + idProd;
+                    resultado = datos.ExecuteQuery(query);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Stock actualizado", "Sistema",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actulizar stock", "Sistema",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            mostrarProductos();
+
+            dGVCesta.Rows.Clear();  
+            tBTotalVta.Text = "0.00";  
+
+
         }
 
         private void btnAgregarProd_Click(object sender, EventArgs e)
@@ -867,42 +897,56 @@ namespace Supermercado
                 return;
             }
             string id = dGVMostrarProdVtas[0, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString();
-            DataSet ds = datos.getAllData("SELECT id, nombre, marca, codigo, precio_unidad FROM productos WHERE id=" + id);
+            DataSet ds = datos.getAllData("SELECT id, nombre, marca, codigo, precio_unidad, stock FROM productos WHERE id=" + id);
 
-            if (ds.Tables[0].Rows.Count > 0)
+            if (int.Parse(tBCantidad.Text) <= int.Parse(dGVMostrarProdVtas[10, dGVMostrarProdVtas.CurrentCell.RowIndex].Value.ToString()))
             {
-                DataRow fila = ds.Tables[0].Rows[0];
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    DataRow fila = ds.Tables[0].Rows[0];
 
-                // Calcular subtotal
-                decimal precio = Convert.ToDecimal(fila["precio_unidad"]);
-                decimal subtotal = precio * cantidad;
+                    // Calcular subtotal
+                    decimal precio = Convert.ToDecimal(fila["precio_unidad"]);
+                    decimal subtotal = precio * cantidad;
 
-                // Agregar al carrito
-                dGVCesta.Rows.Add(fila["id"], fila["nombre"].ToString(),fila["marca"].ToString(),
-                fila["codigo"].ToString(),cantidad,precio.ToString("0.00"));
+                    // Agregar al carrito
+                    dGVCesta.Rows.Add(fila["id"], fila["nombre"].ToString(), fila["marca"].ToString(),
+                    fila["codigo"].ToString(), cantidad, precio.ToString("0.00"), fila["stock"]);
 
-                tBTotalVta.Text = (Convert.ToDecimal(tBTotalVta.Text) + subtotal).ToString("0.00"); 
+                    tBTotalVta.Text = (Convert.ToDecimal(tBTotalVta.Text) + subtotal).ToString("0.00");
+                }
+
+            } else
+            {
+                MessageBox.Show("La cantidad solicitada excede el stock disponible.");  
             }
         }
 
         private void tBBuscar_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = datos.getAllData(
-            "SELECT * " +
-            "FROM productos " + "WHERE codigo ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR nombre ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR (nombre || ' ' || marca) ILIKE '" + tBBuscar.Text + "%' " +
-            "   OR tipo ILIKE '%" + tBBuscar.Text + "%' " +
-            "   OR grupo ILIKE '%" + tBBuscar.Text + "%' "
-            );
-            if (ds != null)
+            if (tBBuscar.Text.Equals(""))
             {
-                dGVMostrarProdVtas.DataSource = ds.Tables[0];
-            }
-            else
+                dGVMostrarProdVtas.DataSource = null;
+            } else
             {
-                MessageBox.Show("Error al cargar los datos.", "Sistema",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataSet ds = datos.getAllData(
+                "SELECT * " +
+                "FROM productos " + "WHERE codigo ILIKE '" + tBBuscar.Text + "%' " +
+                "   OR nombre ILIKE '" + tBBuscar.Text + "%' " +
+                "   OR marca ILIKE '%" + tBBuscar.Text + "%' " +
+                "   OR (nombre || ' ' || marca) ILIKE '" + tBBuscar.Text + "%' " +
+                "   OR tipo ILIKE '%" + tBBuscar.Text + "%' " +
+                "   OR grupo ILIKE '%" + tBBuscar.Text + "%' "
+                );
+                if (ds != null)
+                {
+                    dGVMostrarProdVtas.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar los datos.", "Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
