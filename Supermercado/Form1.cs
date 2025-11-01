@@ -226,7 +226,6 @@ namespace Supermercado
             tBCargoEmp.Text = ds.Tables[0].Rows[0]["cargo"].ToString();
             tBAntiguEmp.Text = ds.Tables[0].Rows[0]["antiguedad"].ToString();
             tBSalaAnuEmp.Text = ds.Tables[0].Rows[0]["salario_anual"].ToString();
-            //MessageBox.Show("ID seleccionado = "+id);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
