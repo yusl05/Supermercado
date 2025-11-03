@@ -184,6 +184,13 @@
             this.tBTotalVta = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
             this.dGVCesta = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label52 = new System.Windows.Forms.Label();
             this.btnAgregarProd = new System.Windows.Forms.Button();
             this.cBVendedor = new System.Windows.Forms.ComboBox();
@@ -196,13 +203,7 @@
             this.dGVVentasProd = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dGVComprasClie = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGenRep = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProductos)).BeginInit();
@@ -1784,6 +1785,55 @@
             this.dGVCesta.Size = new System.Drawing.Size(968, 199);
             this.dGVCesta.TabIndex = 8;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 8;
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 150;
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "marca";
+            this.marca.MinimumWidth = 8;
+            this.marca.Name = "marca";
+            this.marca.Width = 150;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "codigo";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 150;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.MinimumWidth = 8;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 150;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "precio";
+            this.precio.MinimumWidth = 8;
+            this.precio.Name = "precio";
+            this.precio.Width = 150;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "stock";
+            this.stock.MinimumWidth = 8;
+            this.stock.Name = "stock";
+            this.stock.Width = 150;
+            // 
             // label52
             // 
             this.label52.AutoSize = true;
@@ -1884,6 +1934,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.btnGenRep);
             this.tabPage10.Controls.Add(this.dGVComprasClie);
             this.tabPage10.Location = new System.Drawing.Point(4, 29);
             this.tabPage10.Name = "tabPage10";
@@ -1903,54 +1954,16 @@
             this.dGVComprasClie.Size = new System.Drawing.Size(1119, 370);
             this.dGVComprasClie.TabIndex = 50;
             // 
-            // ID
+            // btnGenRep
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.Width = 150;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 8;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 150;
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "marca";
-            this.marca.MinimumWidth = 8;
-            this.marca.Name = "marca";
-            this.marca.Width = 150;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "codigo";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.Width = 150;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "cantidad";
-            this.cantidad.MinimumWidth = 8;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 150;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "precio";
-            this.precio.MinimumWidth = 8;
-            this.precio.Name = "precio";
-            this.precio.Width = 150;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "stock";
-            this.stock.MinimumWidth = 8;
-            this.stock.Name = "stock";
-            this.stock.Width = 150;
+            this.btnGenRep.BackColor = System.Drawing.Color.Azure;
+            this.btnGenRep.Location = new System.Drawing.Point(922, 484);
+            this.btnGenRep.Name = "btnGenRep";
+            this.btnGenRep.Size = new System.Drawing.Size(239, 52);
+            this.btnGenRep.TabIndex = 51;
+            this.btnGenRep.Text = "Generar reporte";
+            this.btnGenRep.UseVisualStyleBackColor = false;
+            this.btnGenRep.Click += new System.EventHandler(this.btnGenRep_Click);
             // 
             // Form1
             // 
@@ -2171,6 +2184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.Button btnGenRep;
     }
 }
 

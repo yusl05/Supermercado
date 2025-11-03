@@ -1,5 +1,6 @@
 ﻿using ImageMagick;
 using ImageMagick.Drawing;
+using PuntoVenta;
 using Supermercado.Data;
 using System;
 using System.Collections.Generic;
@@ -1030,6 +1031,12 @@ namespace Supermercado
                 MessageBox.Show("Error al cargar los datos.", "Sistema",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnGenRep_Click(object sender, EventArgs e)
+        {
+            Reporte Rep = new Reporte();
+            Rep.Show();
         }
     }
 }
